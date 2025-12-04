@@ -428,7 +428,134 @@
         </div>
       </section>
       <!-- SECCIÓN 4: LLAMADA A LA ACCIÓN (Fin) -->
+       <!-- SECCIÓN 5: CALCULADORA (Movida al Inicio) -->
+<section id="calculadora" class="py-5 bg-dark position-relative overflow-hidden">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
 
+        <div class="container position-relative z-1">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-white">
+              Calcula tu <span class="text-warning">Ahorro Divino</span>
+            </h2>
+            <p class="lead text-secondary">
+              Descubre cuánto dinero recuperarás instalando un ThorSolar.
+            </p>
+          </div>
+
+          <div class="card bg-glass rounded-4 shadow-lg text-white p-4">
+            <div class="card-body">
+              <div class="row g-5 align-items-center">
+                
+                <div class="col-lg-6">
+                  
+                  <div class="mb-5">
+                    <label for="gasInput" class="form-label text-light fw-bold fs-5">
+                      ¿Cuánto gastas de Gas al mes?
+                    </label>
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="fs-2 text-warning fw-bold me-2">$</span>
+                      <input
+                        type="number"
+                        id="gasInput"
+                        value="800"
+                        min="0"
+                        step="50"
+                        class="input-transparent"
+                        oninput="updateCalculator()"
+                      />
+                    </div>
+                    <input
+                      type="range"
+                      class="form-range"
+                      id="gasRange"
+                      min="200"
+                      max="5000"
+                      step="50"
+                      value="800"
+                      oninput="syncInputs(this.value)"
+                    />
+                    <small class="text-secondary">Desliza para ajustar tu gasto.</small>
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="form-label text-light fw-bold fs-5 mb-3">
+                      ¿Cuántas personas viven en casa?
+                    </label>
+                    <div class="btn-group w-100" role="group">
+                      <button
+                        type="button"
+                        class="btn btn-outline-light py-3 fw-bold people-btn active"
+                        data-val="3"
+                        onclick="setPeople(3, this)"
+                      >
+                        1 - 4
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-outline-light py-3 fw-bold people-btn"
+                        data-val="6"
+                        onclick="setPeople(6, this)"
+                      >
+                        5 - 7
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-outline-light py-3 fw-bold people-btn"
+                        data-val="9"
+                        onclick="setPeople(9, this)"
+                      >
+                        8+
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="alert alert-primary d-flex align-items-center border-0 bg-opacity-10" style="background-color: rgba(13, 110, 253, 0.2);">
+                    <i class="bi bi-check-circle-fill fs-3 text-info me-3"></i>
+                    <div>
+                      <div class="text-uppercase text-info fw-bold small">Modelo Recomendado</div>
+                      <div id="recommendedModel" class="fs-4 fw-bold text-white">Gravedad 150L</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="p-4 rounded-4 border border-secondary position-relative" style="background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);">
+                    <div class="text-center">
+                        <h4 class="text-uppercase text-secondary letter-spacing-2 mb-4">Tu Ahorro Estimado (80%)</h4>
+                        
+                        <div class="mb-4">
+                            <p class="text-secondary mb-0">Ahorro Mensual</p>
+                            <h3 class="display-6 fw-bold text-white" id="monthlySavings">$640 MXN</h3>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="text-secondary mb-0">Ahorro Anual</p>
+                            <h2 class="display-3 fw-bold text-warning" id="yearlySavings">$7,680 <span class="fs-4 text-white">MXN</span></h2>
+                        </div>
+
+                        <div class="border-top border-secondary pt-3 mt-3">
+                            <p class="text-secondary mb-1">En 5 años habrás ahorrado:</p>
+                            <p id="fiveYearSavings" class="fs-2 fw-bold text-info">$38,400 MXN</p>
+                        </div>
+
+                        <a 
+                           href="https://wa.me/525584122228?text=Hola,%20hice%20el%20cálculo%20y%20quiero%20empezar%20a%20ahorrar."
+                           target="_blank"
+                           class="btn btn-success btn-lg w-100 rounded-pill fw-bold mt-4 shadow"
+                        >
+                            ¡Quiero este Ahorro!
+                        </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECCIÓN 5: CALCULADORA (Movida al final) -->
       <!-- SECCIÓN 5: CONTACTO (Movida al final) -->
       <section id="contacto" class="section-padding solar-bg-contacto">
         <div class="container">
@@ -638,6 +765,76 @@
           }
         });
       }
+
+      
+      //Calculadora
+      let currentPeople = 3; // Valor por defecto
+
+      function syncInputs(val) {
+        document.getElementById("gasInput").value = val;
+        updateCalculator();
+      }
+
+      function setPeople(num) {
+        currentPeople = num;
+        // Actualizar estilo botones
+        document.querySelectorAll(".people-btn").forEach((btn) => {
+          btn.classList.remove("bg-thor-gold", "text-thor-dark", "active");
+          btn.classList.add("text-gray-300", "bg-white/5");
+          if (parseInt(btn.dataset.val) === num) {
+            btn.classList.remove("text-gray-300", "bg-white/5");
+            btn.classList.add("bg-thor-gold", "text-thor-dark", "active");
+          }
+        });
+        updateCalculator();
+      }
+
+      function updateCalculator() {
+        // 1. Obtener valores
+        let gasSpend =
+          parseFloat(document.getElementById("gasInput").value) || 0;
+
+        // Sincronizar slider si se escribió manual
+        document.getElementById("gasRange").value = gasSpend;
+
+        // 2. Calcular Ahorros (80% regla general)
+        const savingsRate = 0.8;
+        const monthlySave = gasSpend * savingsRate;
+        const yearlySave = monthlySave * 12;
+        const fiveYearSave = yearlySave * 5;
+
+        // 3. Determinar Modelo Recomendado
+        let model = "Gravedad 150L";
+        if (currentPeople >= 5 && currentPeople <= 7) {
+          model = "Presurizado 200L";
+        } else if (currentPeople >= 8) {
+          model = "Industrial 300L";
+        }
+
+        // 4. Actualizar DOM con formato moneda
+        const formatter = new Intl.NumberFormat("es-MX", {
+          style: "currency",
+          currency: "MXN",
+          minimumFractionDigits: 0,
+        });
+
+        document.getElementById(
+          "monthlySavings"
+        ).innerHTML = `${formatter.format(
+          monthlySave
+        )} <span class="text-base font-normal">MXN</span>`;
+        document.getElementById(
+          "yearlySavings"
+        ).innerHTML = `${formatter.format(
+          yearlySave
+        )} <span class="text-2xl font-normal">MXN</span>`;
+        document.getElementById("fiveYearSavings").textContent =
+          formatter.format(fiveYearSave) + " MXN";
+        document.getElementById("recommendedModel").textContent = model;
+      }
+
+      // Inicializar visualmente el botón activo
+      setPeople(3);
     </script>
   </body>
 </html>
