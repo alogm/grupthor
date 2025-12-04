@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThorSolar - Quiénes Somos</title>
+    <!-- Carga de Bootstrap 5.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <!-- Carga de Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Carga de Google Font (Inter) para una tipografía moderna -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="50">
+    <!-- Botón Flotante Fijo de WhatsApp -->
+    <a
+      href="https://wa.me/5584122228?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20los%20calentadores%20solares."
+      class="whatsapp-float"
+      target="_blank"
+      title="Contáctanos por WhatsApp"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    <!-- Botón Fijo Flotante de WhatsApp (Fin) -->
+
+    <!-- Navbar/Menú de Navegación -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm"
+      id="mainNav"
+    >
+      <div class="container">
+        <img
+          src="/logo/Gemini_Generated_Image_dn4u37dn4u37dn4u.png"
+          class="logo-img rounded-circle border border-4 border-white"
+          alt="Logo del Sistema"
+        />
+        <a class="navbar-brand" href="propuesta1/index.html">ThorSolar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="propuesta2/index2.html">Propuesta2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quienesSomos.html">Quiénes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="misionVision.html">Misión/Visión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar (Fin) -->
+
+    <main>
+      <!-- SECCIÓN HERO/BANNER DE PÁGINA -->
+      <header class="product-hero">
+        <div class="container text-center">
+          <h1 class="display-3 fw-bolder">
+            <i class="bi bi-box-seam-fill me-2"></i> Nuestro Catálogo Solar
+          </h1>
+          <p class="lead fw-bold mb-0">
+            Máxima calidad y durabilidad en calentadores de tubo de vacío y
+            placa plana.
+          </p>
+        </div>
+      </header>
+      <!-- SECCIÓN HERO (Fin) -->
+
+      <!-- SECCIÓN 4: PRODUCTOS (CON MODALS) -->
+      <section id="productos" class="section-padding bg-light">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bolder display-6 text-primary">
+              <i class="bi bi-grid-fill me-2"></i> Modelos Disponibles
+            </h2>
+            <p class="lead text-secondary">
+              Haz clic en cualquier tarjeta para ver las especificaciones
+              detalladas.
+            </p>
+          </div>
+
+          <div class="row justify-content-center g-4">
+            <!-- Producto 1: Familiar Estándar -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="1"
+              >
+                <img
+                  src="/imagen/img1.jpeg"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Calentador Familiar Estándar"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/0d6efd/ffffff?text=Familiar+12+Tubos'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-success position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >AHORRO GARANTIZADO</span
+                  >
+                  <h5 class="card-title fw-bolder text-primary mt-3 mb-2">
+                    Sistema 12 Tubos - 150L
+                  </h5>
+                  <p class="card-text text-muted">
+                    El modelo más popular. Ideal para hogares pequeños a
+                    medianos.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-primary rounded-pill mt-3 fw-bold w-100">
+                      Ver Ficha Técnica
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2: Residencial Grande -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="2"
+              >
+                <img
+                  src="/imagen/img2.jpg"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Calentador Residencial Grande"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/28a745/ffffff?text=Residencial+20+Tubos'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-warning text-dark position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >ALTO RENDIMIENTO</span
+                  >
+                  <h5 class="card-title fw-bolder text-success mt-3 mb-2">
+                    Sistema 20 Tubos - 250L
+                  </h5>
+                  <p class="card-text text-muted">
+                    Potencia y capacidad para residencias de alto consumo.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-success rounded-pill mt-3 fw-bold w-100">
+                      Ver Ficha Técnica
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3: Uso Comercial/Alberca -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="3"
+              >
+                <img
+                  src="/imagen/img3.jpeg"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Sistema Comercial/Alberca"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/ffc107/333333?text=Comercial+Modular'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-danger position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >PROYECTOS ESPECIALES</span
+                  >
+                  <h5 class="card-title fw-bolder text-warning mt-3 mb-2">
+                    Soluciones Modulares
+                  </h5>
+                  <p class="card-text text-muted">
+                    Diseño y cotización a medida para hoteles, gimnasios y
+                    albercas.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-warning text-dark rounded-pill mt-3 fw-bold w-100">
+                      Solicitar Estudio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 4: -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="4"
+              >
+                <img
+                  src="/imagen/img4.jpg"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Sistema Comercial/Alberca"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/ffc107/333333?text=Comercial+Modular'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-danger position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >PROYECTOS ESPECIALES</span
+                  >
+                  <h5 class="card-title fw-bolder text-warning mt-3 mb-2">
+                    Soluciones Modulares
+                  </h5>
+                  <p class="card-text text-muted">
+                    Diseño y cotización a medida para hoteles, gimnasios y
+                    albercas.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-warning text-dark rounded-pill mt-3 fw-bold w-100">
+                      Solicitar Estudio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 5: -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="5"
+              >
+                <img
+                  src="/imagen/img5.jpg"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Sistema Comercial/Alberca"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/ffc107/333333?text=Comercial+Modular'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-danger position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >PROYECTOS ESPECIALES</span
+                  >
+                  <h5 class="card-title fw-bolder text-warning mt-3 mb-2">
+                    Soluciones Modulares
+                  </h5>
+                  <p class="card-text text-muted">
+                    Diseño y cotización a medida para hoteles, gimnasios y
+                    albercas.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-warning text-dark rounded-pill mt-3 fw-bold w-100">
+                      Solicitar Estudio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 6: -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="6"
+              >
+                <img
+                  src="/imagen/img6.png"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Sistema Comercial/Alberca"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/ffc107/333333?text=Comercial+Modular'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-danger position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >PROYECTOS ESPECIALES</span
+                  >
+                  <h5 class="card-title fw-bolder text-warning mt-3 mb-2">
+                    Soluciones Modulares
+                  </h5>
+                  <p class="card-text text-muted">
+                    Diseño y cotización a medida para hoteles, gimnasios y
+                    albercas.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-warning text-dark rounded-pill mt-3 fw-bold w-100">
+                      Solicitar Estudio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 7:-->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="7"
+              >
+                <img
+                  src="/imagen/img7.jpeg"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Sistema Comercial/Alberca"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/ffc107/333333?text=Comercial+Modular'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-danger position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >PROYECTOS ESPECIALES</span
+                  >
+                  <h5 class="card-title fw-bolder text-warning mt-3 mb-2">
+                    Soluciones Modulares
+                  </h5>
+                  <p class="card-text text-muted">
+                    Diseño y cotización a medida para hoteles, gimnasios y
+                    albercas.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-warning text-dark rounded-pill mt-3 fw-bold w-100">
+                      Solicitar Estudio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 8: -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="8"
+              >
+                <img
+                  src="/imagen/img8.jpg"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Sistema Comercial/Alberca"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/ffc107/333333?text=Comercial+Modular'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-danger position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >PROYECTOS ESPECIALES</span
+                  >
+                  <h5 class="card-title fw-bolder text-warning mt-3 mb-2">
+                    Soluciones Modulares
+                  </h5>
+                  <p class="card-text text-muted">
+                    Diseño y cotización a medida para hoteles, gimnasios y
+                    albercas.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-warning text-dark rounded-pill mt-3 fw-bold w-100">
+                      Solicitar Estudio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 9: -->
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card card-product h-100 rounded-4 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+                data-product-id="9"
+              >
+                <img
+                  src="/imagen/img9.jpg"
+                  class="card-img-top rounded-top-4 product-img"
+                  alt="Sistema Comercial/Alberca"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x350/ffc107/333333?text=Comercial+Modular'"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <span class="badge bg-danger position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 fw-bold"
+                    >PROYECTOS ESPECIALES</span
+                  >
+                  <h5 class="card-title fw-bolder text-warning mt-3 mb-2">
+                    Soluciones Modulares
+                  </h5>
+                  <p class="card-text text-muted">
+                    Diseño y cotización a medida para hoteles, gimnasios y
+                    albercas.
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-outline-warning text-dark rounded-pill mt-3 fw-bold w-100">
+                      Solicitar Estudio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de la Fila de Productos -->
+        </div>
+      </section>
+      <!-- SECCIÓN 4: PRODUCTOS (Fin) -->
+
+      <!-- SECCIÓN EXTRA: TESTIMONIOS o BENEFICIOS CLAVE -->
+      <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+          <h3 class="fw-bold mb-3">¿Tienes dudas sobre qué modelo elegir?</h3>
+          <p class="lead mb-4">
+            Nuestros expertos te ayudarán a seleccionar el calentador perfecto
+            para maximizar tu ahorro y confort.
+          </p>
+          <a
+            href="contacto.html"
+            class="btn btn-lg btn-warning rounded-pill fw-bold shadow-lg text-dark"
+          >
+            <i class="bi bi-calculator me-2"></i> Asesoría Gratuita
+          </a>
+        </div>
+      </section>
+      <!-- SECCIÓN EXTRA (Fin) -->
+    </main>
+
+               <!-- SECCIÓN 5: CONTACTO (Movida al final) -->
+      <section id="contacto" class="section-padding solar-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <h2 class="fw-bolder display-6 mb-4">
+                <i class="bi bi-chat-dots-fill"></i> Hablemos de tu Proyecto
+              </h2>
+              <p class="lead mb-5">
+                Contáctanos hoy para recibir atención personalizada y una
+                cotización sin compromiso.
+              </p>
+
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="card p-4 rounded-4 shadow h-100">
+                    <i class="bi bi-whatsapp display-5 text-success mb-3"></i>
+                    <h5 class="mt-2 fw-bold">WhatsApp Directo</h5>
+                    <p class="mb-0 fw-bold fs-5">55 8412 2228</p>
+                    <a
+                      href="https://wa.me/5584122228?text=Hola,%20quisiera%20más%20información%20de%20contacto%20y%20ubicación."
+                      target="_blank"
+                      class="btn btn-success btn-lg mt-3 rounded-pill shadow"
+                      >Enviar Mensaje</a
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card p-4 rounded-4 shadow h-100">
+                    <i
+                      class="bi bi-telephone-fill display-5 text-primary mb-3"
+                    ></i>
+                    <h5 class="mt-2 fw-bold">Llamada de Venta</h5>
+                    <p class="mb-0 fw-bold fs-5">55 8412 2228</p>
+                    <a
+                      href="tel:5584122228"
+                      class="btn btn-primary btn-lg mt-3 rounded-pill shadow"
+                      >Llamar Ahora</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECCIÓN 5: CONTACTO (Fin) -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white-50 py-4">
+      <div class="container text-center">
+        <p class="mb-0">
+          &copy; 2025 ThorSolar. Todos los derechos reservados. | Diseñado para
+          la Energía Limpia.
+        </p>
+      </div>
+    </footer>
+    <!-- Footer (Fin) -->
+     <!-- Modal Universal de Producto (Estructura) -->
+    <div
+      class="modal fade"
+      id="productModal"
+      tabindex="-1"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-4">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title fw-bold" id="productModalLabel">
+              Detalles del Producto
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row">
+              <div class="col-md-6">
+                <img
+                  id="modal-product-image"
+                  src=""
+                  class="img-fluid rounded-3 mb-3 shadow-sm d-block mx-auto product-img"
+                  alt="Imagen del Producto"
+                />
+              </div>
+              <div class="col-md-6">
+                <h3 id="modal-product-title" class="text-primary fw-bolder mb-3"></h3>
+                <p id="modal-product-description" class="lead"></p>
+                <hr />
+                <h6 class="fw-bold text-dark">Especificaciones Clave:</h6>
+                <ul id="modal-product-specs" class="list-unstyled fw-medium">
+                  <!-- Especificaciones se llenarán con JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button
+              type="button"
+              class="btn btn-secondary rounded-pill"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <!-- Botón de WhatsApp dinámico -->
+            <a
+              id="modal-whatsapp-link"
+              href="#"
+              target="_blank"
+              class="btn btn-whatsapp-modal rounded-pill fw-bold"
+            >
+              <i class="bi bi-whatsapp me-2"></i> Solicitar Cotización
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Universal (Fin) -->
+    <!-- Carga de Bootstrap 5.3 JS Bundle (Popper y JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eZz03/sN7/zT+A1rI+fK7t3" crossorigin="anonymous"></script>
+
+<script>
+      // Datos de los productos para llenar el modal
+      const productData = {
+        1: {
+          title: "Sistema Familiar de 150 Litros",
+          subtitle: "Calentador de Tubo de Vacío, 12 Tubos",
+          description:
+            "El equipo más vendido y eficiente para el clima promedio en México. Proporciona agua caliente continua para hasta 4 personas, garantizando un ahorro del 90% en gas LP.",
+          image: "/imagen/prod-familiar.jpg",
+          specs: [
+            "Capacidad: 150 Litros",
+            "Personas: 3 a 4",
+            "Tipo: Tubo de Vacío (Máximo Rendimiento)",
+            "Material del Tanque: Acero Inoxidable SUS304",
+            "Garantía: 5 años en equipo, 1 año en instalación",
+          ],
+        },
+        2: {
+          title: "Sistema Residencial de 250 Litros",
+          subtitle: "Calentador de Tubo de Vacío, 20 Tubos",
+          description:
+            "Diseñado para grandes residencias o donde se requiere un alto volumen de agua caliente constante. Ideal para dos baños completos y más de 5 usuarios.",
+          image: "/imagen/prod-residencial.jpg",
+          specs: [
+            "Capacidad: 250 Litros",
+            "Personas: 5 a 7",
+            "Tipo: Tubo de Vacío Reforzado",
+            "Material del Tanque: Acero Inoxidable Premium SUS316",
+            "Presión: Soporta alta y baja presión con válvula de alivio",
+          ],
+        },
+        3: {
+          title: "Soluciones Modulares Comerciales",
+          subtitle: "Diseño e Instalación a Medida",
+          description:
+            "Ofrecemos proyectos llave en mano para hoteles, gimnasios, hospitales y calentamiento de albercas. Nuestro equipo de ingeniería realiza un estudio personalizado para la máxima rentabilidad.",
+          image: "/imagen/prod-comercial.jpg",
+          specs: [
+            "Capacidad: Modular (desde 500 hasta 10,000 Litros)",
+            "Configuración: Tubo de Vacío o Placa Plana",
+            "Aplicación: Industrial, Comercial, Albercas",
+            "Entrega: Ingeniería y planos 3D incluidos",
+            "Certificación: ISO y NOM",
+          ],
+        },
+      };
+
+      // Lógica para abrir y llenar el modal
+      const productModal = document.getElementById("productModal");
+      if (productModal) {
+        productModal.addEventListener("show.bs.modal", (event) => {
+          const button = event.relatedTarget;
+          const productId = button.getAttribute("data-product-id");
+          const product = productData[productId];
+          const phoneNumber = "5584122228";
+
+          // Elementos del Modal
+          const modalTitle = document.getElementById("modal-product-title");
+          const modalDescription = document.getElementById("modal-product-description");
+          const modalImage = document.getElementById("modal-product-image");
+          const modalSpecs = document.getElementById("modal-product-specs");
+          const modalWhatsappLink = document.getElementById("modal-whatsapp-link");
+
+          if (product) {
+            // Llenar Título, Descripción e Imagen
+            modalTitle.textContent = product.title;
+            modalDescription.innerHTML = `**${product.subtitle}**<br>${product.description}`;
+            modalImage.src = product.image;
+            modalImage.alt = product.title;
+
+            // Llenar Especificaciones (Specs)
+            modalSpecs.innerHTML = ""; // Limpiar lista
+            product.specs.forEach((spec) => {
+              const li = document.createElement("li");
+              // Usamos el ícono de verificación para las specs
+              li.innerHTML = `<i class="bi bi-check-circle-fill me-2 text-success"></i>${spec}`;
+              modalSpecs.appendChild(li);
+            });
+
+            // Crear el enlace de WhatsApp con mensaje predefinido
+            const whatsappMessage = `Hola, estoy interesado/a en el producto: *${product.title}* y me gustaría recibir una cotización detallada.`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            modalWhatsappLink.href = whatsappURL;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

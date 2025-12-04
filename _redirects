@@ -1,0 +1,10 @@
+# Archivo: _redirects
+#
+# Regla 1: Ocultar la carpeta propuesta1
+/quienesSomos   /propuesta1/quienesSomos.html  200
+/misionVision   /propuesta1/misionVision.html  200
+/productos      /propuesta1/productos.html     200
+/contacto       /propuesta1/contacto.html      200
+
+# Regla 2: Redirección de Propuesta2 (Opcional, si quieres una URL limpia)
+/propuesta2   /propuesta2/index2.html        200
