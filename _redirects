@@ -7,4 +7,7 @@
 /contacto       /propuesta1/contacto.html      200
 
 # Regla 2: Redirección de Propuesta2 (Opcional, si quieres una URL limpia)
-/propuesta2   /propuesta2/index2.html        200
+/propuesta2   /propuesta2/index.html        200
+
+# Regla 2: Redirección de Propuesta2 (Opcional, si quieres una URL limpia)
+/propuesta3   /propuesta3/index.html        200
