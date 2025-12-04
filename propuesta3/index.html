@@ -1,279 +1,847 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ThorSolar - Energía Legendaria</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        thor: {
-                            dark: "#0f172a",
-                            blue: "#1e3a8a",
-                            cyan: "#06b6d4",
-                            gold: "#fbbf24",
-                            goldDark: "#d97706",
-                        },
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                        display: ["Montserrat", "sans-serif"],
-                    },
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              thor: {
+                dark: "#0f172a",
+                blue: "#1e3a8a",
+                cyan: "#06b6d4",
+                gold: "#fbbf24",
+                goldDark: "#d97706",
+              },
             },
-        };
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
 
     <style>
-        html { scroll-behavior: smooth; }
-        
-        .whatsapp-float { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
-        
-        .scrolled {
-            background-color: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #fbbf24;
-        }
+      .whatsapp-float {
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.1) rotate(10deg);
+      }
+
+      .scrolled {
+        background-color: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-color: #fbbf24;
+      }
     </style>
-</head>
-<body class="font-sans text-gray-700 antialiased bg-gray-50">
-
-    <a href="https://wa.me/525584122228?text=Hola%20ThorSolar,%20quiero%20información%20general."
-       target="_blank"
-       class="whatsapp-float fixed bottom-6 right-6 z-50 p-4 bg-green-500 rounded-full shadow-2xl hover:bg-green-400 border-2 border-white flex items-center justify-center group"
-       aria-label="Contactar por WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12.04 2C6.544 2 2.02 6.49 2.01 11.96c0 1.765.46 3.456 1.32 4.954L2 22l5.244-1.378a9.927 9.927 0 004.814 1.259c5.504 0 9.98-4.502 9.99-10.006C22.04 6.49 17.564 2 12.04 2zM17.5 14.3c-.2-.1-.8-.4-1-.4s-.3-.1-.5.3-.6.7-.8.8-.3.1-.6.1-.9-.3-1.1-.6-.8-.7-.9-1-.2-.4 0-.4s.2-.4.4-.6c.2-.2.4-.5.5-.7s.2-.4.1-.6-.2-.4-.3-.5c-.1-.1-.3-.2-.4-.3s-.3-.2-.5-.2h-.4c-.2 0-.5.1-.7.4-.2.2-.8.8-.8.9s-.1.2-.2.3c-.1.2-.2.4-.2.5s.1.2.2.3c.1.1.2.3.4.4s.3.2.5.3c.2.1.4.1.6.1s.4 0 .5-.1c.2-.1.8-.4 1-.6s.4-.4.5-.6c.1-.2.2-.4.2-.6s0-.4-.1-.5z" />
-        </svg>
+  </head>
+  <body class="font-sans text-gray-700 antialiased bg-gray-50">
+    <a
+      href="https://wa.me/525584122228?text=Hola%20ThorSolar,%20quiero%20información%20general."
+      target="_blank"
+      class="whatsapp-float fixed bottom-6 right-6 z-50 p-4 bg-green-500 rounded-full shadow-2xl hover:bg-green-400 border-2 border-white flex items-center justify-center group"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8 text-white"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12.04 2C6.544 2 2.02 6.49 2.01 11.96c0 1.765.46 3.456 1.32 4.954L2 22l5.244-1.378a9.927 9.927 0 004.814 1.259c5.504 0 9.98-4.502 9.99-10.006C22.04 6.49 17.564 2 12.04 2zM17.5 14.3c-.2-.1-.8-.4-1-.4s-.3-.1-.5.3-.6.7-.8.8-.3.1-.6.1-.9-.3-1.1-.6-.8-.7-.9-1-.2-.4 0-.4s.2-.4.4-.6c.2-.2.4-.5.5-.7s.2-.4.1-.6-.2-.4-.3-.5c-.1-.1-.3-.2-.4-.3s-.3-.2-.5-.2h-.4c-.2 0-.5.1-.7.4-.2.2-.8.8-.8.9s-.1.2-.2.3c-.1.2-.2.4-.2.5s.1.2.2.3c.1.1.2.3.4.4s.3.2.5.3c.2.1.4.1.6.1s.4 0 .5-.1c.2-.1.8-.4 1-.6s.4-.4.5-.6c.1-.2.2-.4.2-.6s0-.4-.1-.5z"
+        />
+      </svg>
     </a>
 
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-thor-dark py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.location.href='index.html'">
-                    <img src="/logo/logo12.png" alt="ThorSolar Logo" class="w-20 h-20 md:w-14 md:h-14 rounded-full border-2 border-thor-gold shadow-[0_0_15px_rgba(251,191,36,0.6)] object-cover hover:scale-110 transition duration-300">
-                    <span class="text-2xl font-display font-black text-white tracking-wider hidden sm:block">
-                        THOR<span class="text-thor-gold">SOLAR</span>
-                    </span>
-                    <span class="text-xl font-display font-black text-white tracking-wider sm:hidden">THOR</span>
-                </div>
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-thor-dark py-4"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <div
+            class="flex-shrink-0 flex items-center gap-3 cursor-pointer"
+            onclick="window.location.href='index.html'"
+          >
+            <img
+              src="/logo/logo12.png"
+              alt="ThorSolar Logo"
+              class="w-20 h-20 md:w-14 md:h-14 rounded-full border-2 border-thor-gold shadow-[0_0_15px_rgba(251,191,36,0.6)] object-cover hover:scale-110 transition duration-300"
+            />
+            <span
+              class="text-2xl font-display font-black text-white tracking-wider hidden sm:block"
+            >
+              THOR<span class="text-thor-gold">SOLAR</span>
+            </span>
+            <span
+              class="text-xl font-display font-black text-white tracking-wider sm:hidden"
+              >THOR</span
+            >
+          </div>
 
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-thor-gold font-bold border-b-2 border-thor-gold pb-1 text-sm uppercase tracking-wide">Inicio</a>
-                    <a href="productos.html" class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide">Productos</a>
-                    <a href="nosotros.html" class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide">Nosotros</a>
-                    <a href="contacto.html" class="px-6 py-2 rounded-full bg-gradient-to-r from-thor-gold to-thor-goldDark text-white font-bold shadow-lg hover:shadow-thor-gold/50 transform hover:-translate-y-0.5 transition duration-300 text-sm">Cotizar Ahora</a>
-                </div>
+          <div class="hidden md:flex space-x-8 items-center">
+            <a
+              href="index.html"
+              class="text-thor-gold font-bold border-b-2 border-thor-gold pb-1 text-sm uppercase tracking-wide"
+              >Inicio</a
+            >
+            <a
+              href="productos.html"
+              class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide"
+              >Productos</a
+            >
+            <a
+              href="nosotros.html"
+              class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide"
+              >Nosotros</a
+            >
+            <a
+              href="contacto.html"
+              class="px-6 py-2 rounded-full bg-gradient-to-r from-thor-gold to-thor-goldDark text-white font-bold shadow-lg hover:shadow-thor-gold/50 transform hover:-translate-y-0.5 transition duration-300 text-sm"
+              >Cotizar Ahora</a
+            >
+          </div>
 
-                <button id="menu-button" class="md:hidden text-thor-gold hover:text-white transition">
-                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
+          <button
+            id="menu-button"
+            class="md:hidden text-thor-gold hover:text-white transition"
+          >
+            <svg
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
         </div>
+      </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-thor-dark border-t border-gray-800 absolute w-full">
-            <div class="px-4 pt-4 pb-6 space-y-2">
-                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-bold text-thor-gold bg-gray-900">Inicio</a>
-                <a href="productos.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Productos</a>
-                <a href="nosotros.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Nosotros</a>
-                <a href="contacto.html" class="block mt-4 text-center px-3 py-3 rounded-md text-base font-bold bg-thor-gold text-thor-dark">Contacto</a>
-            </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-thor-dark border-t border-gray-800 absolute w-full"
+      >
+        <div class="px-4 pt-4 pb-6 space-y-2">
+          <a
+            href="index.html"
+            class="block px-3 py-3 rounded-md text-base font-bold text-thor-gold bg-gray-900"
+            >Inicio</a
+          >
+          <a
+            href="productos.html"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Productos</a
+          >
+          <a
+            href="nosotros.html"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Nosotros</a
+          >
+          <a
+            href="contacto.html"
+            class="block mt-4 text-center px-3 py-3 rounded-md text-base font-bold bg-thor-gold text-thor-dark"
+            >Contacto</a
+          >
         </div>
+      </div>
     </nav>
 
     <main>
-        <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-thor-dark min-h-screen flex items-center">
-            <div class="absolute inset-0 opacity-20">
-                <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M0 100 L100 0 L100 100 Z" fill="#1e3a8a" />
+      <section
+        id="home"
+        class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-thor-dark min-h-screen flex items-center"
+      >
+        <div class="absolute inset-0 opacity-20">
+          <svg
+            class="h-full w-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <path d="M0 100 L100 0 L100 100 Z" fill="#1e3a8a" />
+          </svg>
+        </div>
+
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center"
+        >
+          <div class="text-center lg:text-left">
+            <h1
+              class="text-4xl sm:text-5xl lg:text-7xl font-display font-black text-white mb-6 leading-tight"
+            >
+              Energía
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-thor-cyan to-blue-400"
+                >Legendaria</span
+              ><br />
+              Ahorro
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-thor-gold to-yellow-300"
+                >Divino</span
+              >
+            </h1>
+            <p class="mt-4 text-xl text-gray-300 font-light leading-relaxed">
+              Olvídate del gas y transforma la energía del sol en agua caliente
+              para tu hogar con la fuerza de ThorSolar.
+            </p>
+            <div
+              class="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
+            >
+              <a
+                href="productos.html"
+                class="px-8 py-4 rounded-xl bg-thor-gold hover:bg-yellow-400 text-thor-dark font-bold text-lg shadow-[0_0_20px_rgba(251,191,36,0.4)] transition transform hover:scale-105 text-center"
+              >
+                Ver Catálogo
+              </a>
+              <a
+                href="contacto.html"
+                class="px-8 py-4 rounded-xl border-2 border-thor-cyan text-thor-cyan font-bold text-lg hover:bg-thor-cyan hover:text-thor-dark transition duration-300 text-center"
+              >
+                Contáctanos
+              </a>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-thor-gold to-thor-cyan rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"
+            ></div>
+            <div
+              class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-thor-dark"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+                alt="Instalación Solar"
+                class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2
+              class="text-3xl sm:text-4xl font-display font-bold text-thor-dark mb-4"
+            >
+              Soluciones Integrales
+            </h2>
+            <div class="w-24 h-1 bg-thor-gold mx-auto rounded-full"></div>
+            <p class="mt-4 text-gray-600">
+              No solo vendemos equipos, garantizamos tu tranquilidad.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div
+              class="service-card p-8 rounded-3xl bg-gray-50 border border-gray-100 transition duration-300 text-center"
+            >
+              <div
+                class="w-16 h-16 bg-thor-blue/10 rounded-full flex items-center justify-center mx-auto mb-6 text-thor-blue"
+              >
+                <svg
+                  class="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
                 </svg>
+              </div>
+              <h3 class="text-xl font-bold text-thor-dark mb-3">
+                Venta e Instalación
+              </h3>
+              <p class="text-gray-600">
+                Equipos de última generación instalados por técnicos
+                certificados bajo normativas vigentes.
+              </p>
             </div>
-            
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left">
-                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-display font-black text-white mb-6 leading-tight">
-                        Energía <span class="text-transparent bg-clip-text bg-gradient-to-r from-thor-cyan to-blue-400">Legendaria</span><br>
-                        Ahorro <span class="text-transparent bg-clip-text bg-gradient-to-r from-thor-gold to-yellow-300">Divino</span>
-                    </h1>
-                    <p class="mt-4 text-xl text-gray-300 font-light leading-relaxed">
-                        Olvídate del gas y transforma la energía del sol en agua caliente para tu hogar con la fuerza de ThorSolar.
-                    </p>
-                    <div class="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                        <a href="productos.html" class="px-8 py-4 rounded-xl bg-thor-gold hover:bg-yellow-400 text-thor-dark font-bold text-lg shadow-[0_0_20px_rgba(251,191,36,0.4)] transition transform hover:scale-105 text-center">
-                            Ver Catálogo
-                        </a>
-                        <a href="contacto.html" class="px-8 py-4 rounded-xl border-2 border-thor-cyan text-thor-cyan font-bold text-lg hover:bg-thor-cyan hover:text-thor-dark transition duration-300 text-center">
-                            Contáctanos
-                        </a>
-                    </div>
-                </div>
 
-                <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-thor-gold to-thor-cyan rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-thor-dark">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Instalación Solar" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
-                    </div>
-                </div>
+            <div
+              class="service-card p-8 rounded-3xl bg-gray-50 border border-gray-100 transition duration-300 text-center"
+            >
+              <div
+                class="w-16 h-16 bg-thor-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-thor-gold"
+              >
+                <svg
+                  class="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-thor-dark mb-3">
+                Mantenimiento
+              </h3>
+              <p class="text-gray-600">
+                Servicio preventivo y correctivo para que tu calentador dure más
+                de 20 años funcionando al 100%.
+              </p>
             </div>
-        </section>
 
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl sm:text-4xl font-display font-bold text-thor-dark mb-4">Soluciones Integrales</h2>
-                    <div class="w-24 h-1 bg-thor-gold mx-auto rounded-full"></div>
-                    <p class="mt-4 text-gray-600">No solo vendemos equipos, garantizamos tu tranquilidad.</p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="service-card p-8 rounded-3xl bg-gray-50 border border-gray-100 transition duration-300 text-center">
-                        <div class="w-16 h-16 bg-thor-blue/10 rounded-full flex items-center justify-center mx-auto mb-6 text-thor-blue">
-                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-thor-dark mb-3">Venta e Instalación</h3>
-                        <p class="text-gray-600">Equipos de última generación instalados por técnicos certificados bajo normativas vigentes.</p>
-                    </div>
-
-                    <div class="service-card p-8 rounded-3xl bg-gray-50 border border-gray-100 transition duration-300 text-center">
-                        <div class="w-16 h-16 bg-thor-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-thor-gold">
-                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-thor-dark mb-3">Mantenimiento</h3>
-                        <p class="text-gray-600">Servicio preventivo y correctivo para que tu calentador dure más de 20 años funcionando al 100%.</p>
-                    </div>
-
-                    <div class="service-card p-8 rounded-3xl bg-gray-50 border border-gray-100 transition duration-300 text-center">
-                        <div class="w-16 h-16 bg-thor-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 text-thor-cyan">
-                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-thor-dark mb-3">Garantía Real</h3>
-                        <p class="text-gray-600">Te acompañamos post-venta. Si hay un problema, respondemos rápido y sin letras chiquitas.</p>
-                    </div>
-                </div>
+            <div
+              class="service-card p-8 rounded-3xl bg-gray-50 border border-gray-100 transition duration-300 text-center"
+            >
+              <div
+                class="w-16 h-16 bg-thor-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 text-thor-cyan"
+              >
+                <svg
+                  class="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-thor-dark mb-3">
+                Garantía Real
+              </h3>
+              <p class="text-gray-600">
+                Te acompañamos post-venta. Si hay un problema, respondemos
+                rápido y sin letras chiquitas.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="py-16 bg-thor-dark relative overflow-hidden">
-             <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-thor-gold rounded-full opacity-20 blur-3xl"></div>
-             <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-thor-cyan rounded-full opacity-20 blur-3xl"></div>
-             
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                 <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">¿Buscas el equipo ideal para tu hogar?</h2>
-                 <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">Tenemos calentadores de gravedad, presurizados e industriales. Encuentra el que se adapta a tus necesidades.</p>
-                 <a href="productos.html" class="inline-block px-10 py-4 bg-thor-gold text-thor-dark font-bold rounded-xl shadow-lg hover:bg-white transition transform hover:-translate-y-1">
-                     Explorar Catálogo Completo
-                 </a>
-             </div>
-        </section>
+      <section class="py-16 bg-thor-dark relative overflow-hidden">
+        <div
+          class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-thor-gold rounded-full opacity-20 blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-thor-cyan rounded-full opacity-20 blur-3xl"
+        ></div>
 
-        <section id="nosotros" class="py-20 bg-gray-100 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-display font-bold text-thor-dark mb-6">La Diferencia ThorSolar</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        En un mercado saturado, nos distinguimos por la calidad de nuestros materiales. Usamos acero inoxidable de grado quirúrgico y tubos de borosilicato tricapa que captan la radiación incluso en días nublados.
-                    </p>
-                    <a href="nosotros.html" class="text-thor-blue font-bold hover:text-thor-gold transition flex items-center">
-                        Conoce más sobre nuestra historia
-                        <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </a>
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+        >
+          <h2
+            class="text-3xl md:text-4xl font-display font-bold text-white mb-6"
+          >
+            ¿Buscas el equipo ideal para tu hogar?
+          </h2>
+          <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            Tenemos calentadores de gravedad, presurizados e industriales.
+            Encuentra el que se adapta a tus necesidades.
+          </p>
+          <a
+            href="productos.html"
+            class="inline-block px-10 py-4 bg-thor-gold text-thor-dark font-bold rounded-xl shadow-lg hover:bg-white transition transform hover:-translate-y-1"
+          >
+            Explorar Catálogo Completo
+          </a>
+        </div>
+      </section>
+
+      <section id="nosotros" class="py-20 bg-gray-100 relative">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-display font-bold text-thor-dark mb-6">
+              La Diferencia ThorSolar
+            </h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              En un mercado saturado, nos distinguimos por la calidad de
+              nuestros materiales. Usamos acero inoxidable de grado quirúrgico y
+              tubos de borosilicato tricapa que captan la radiación incluso en
+              días nublados.
+            </p>
+            <a
+              href="nosotros.html"
+              class="text-thor-blue font-bold hover:text-thor-gold transition flex items-center"
+            >
+              Conoce más sobre nuestra historia
+              <svg
+                class="w-4 h-4 ml-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="/imagen/img8.jpg"
+              alt="Hogar Sustentable"
+              class="rounded-2xl shadow-xl border-4 border-white"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-20 bg-gradient-to-b from-thor-dark to-gray-900 relative overflow-hidden"
+      >
+        <div
+          class="absolute top-0 left-0 w-64 h-64 bg-thor-blue rounded-full filter blur-[100px] opacity-20"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-64 h-64 bg-thor-gold rounded-full filter blur-[100px] opacity-10"
+        ></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-display font-black text-white mb-4"
+            >
+              Calcula tu <span class="text-thor-gold">Ahorro Divino</span>
+            </h2>
+            <p class="text-gray-400 text-lg">
+              Descubre cuánto dinero recuperarás instalando un ThorSolar.
+            </p>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <div class="space-y-8">
+              <div>
+                <label class="block text-gray-300 font-bold mb-4 text-lg">
+                  ¿Cuánto gastas de Gas al mes (aprox)?
+                </label>
+                <div class="flex items-center gap-4 mb-4">
+                  <span class="text-2xl text-thor-gold font-bold">$</span>
+                  <input
+                    type="number"
+                    id="gasInput"
+                    value="800"
+                    min="0"
+                    step="50"
+                    class="w-full bg-transparent border-b-2 border-gray-600 text-3xl text-white font-bold focus:outline-none focus:border-thor-gold transition p-2"
+                    oninput="updateCalculator()"
+                  />
                 </div>
-                <div class="md:w-1/2">
-                    <img src="/imagen/img8.jpg" alt="Hogar Sustentable" class="rounded-2xl shadow-xl border-4 border-white">
+                <input
+                  type="range"
+                  id="gasRange"
+                  min="200"
+                  max="5000"
+                  step="50"
+                  value="800"
+                  class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-thor-gold"
+                  oninput="syncInputs(this.value)"
+                />
+                <p class="text-sm text-gray-500 mt-2">
+                  Desliza para ajustar tu gasto.
+                </p>
+              </div>
+
+              <div>
+                <label class="block text-gray-300 font-bold mb-4 text-lg">
+                  ¿Cuántas personas viven en casa?
+                </label>
+                <div class="grid grid-cols-3 gap-4">
+                  <button
+                    onclick="setPeople(3)"
+                    class="people-btn active p-3 rounded-xl border border-gray-600 text-gray-300 hover:border-thor-gold hover:text-thor-gold transition bg-white/5 font-bold"
+                    data-val="3"
+                  >
+                    1 - 4
+                  </button>
+                  <button
+                    onclick="setPeople(6)"
+                    class="people-btn p-3 rounded-xl border border-gray-600 text-gray-300 hover:border-thor-gold hover:text-thor-gold transition bg-white/5 font-bold"
+                    data-val="6"
+                  >
+                    5 - 7
+                  </button>
+                  <button
+                    onclick="setPeople(9)"
+                    class="people-btn p-3 rounded-xl border border-gray-600 text-gray-300 hover:border-thor-gold hover:text-thor-gold transition bg-white/5 font-bold"
+                    data-val="9"
+                  >
+                    8+
+                  </button>
                 </div>
+              </div>
+
+              <div
+                class="p-4 bg-thor-blue/20 rounded-xl border border-thor-blue/50 flex items-start gap-4"
+              >
+                <div class="p-2 bg-thor-blue rounded-full text-white mt-1">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="text-sm text-thor-cyan font-bold uppercase tracking-wide"
+                  >
+                    Modelo Recomendado
+                  </p>
+                  <p id="recommendedModel" class="text-xl text-white font-bold">
+                    Gravedad 150L
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
-        <section class="py-20 relative overflow-hidden bg-thor-dark">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-thor-dark via-transparent to-thor-dark opacity-90"></div>
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="bg-white/5 backdrop-blur-lg p-10 rounded-3xl border border-white/10 shadow-2xl hover:border-thor-cyan/50 transition duration-500">
+            <div
+              class="bg-gradient-to-br from-white/10 to-transparent p-8 rounded-2xl border border-white/5 text-center relative overflow-hidden"
+            >
+              <div class="absolute top-0 right-0 p-4 opacity-10">
+                <svg
+                  class="w-32 h-32 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.4z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-gray-300 uppercase tracking-widest text-sm mb-6">
+                Tu Ahorro Estimado (80%)
+              </h3>
+
+              <div class="mb-8">
+                <p class="text-gray-400 text-sm">Ahorro Mensual</p>
+                <p id="monthlySavings" class="text-4xl font-black text-white">
+                  $640 <span class="text-base font-normal">MXN</span>
+                </p>
+              </div>
+
+              <div class="mb-8">
+                <p class="text-gray-400 text-sm">Ahorro Anual</p>
+                <p
+                  id="yearlySavings"
+                  class="text-5xl font-black text-thor-gold"
+                >
+                  $7,680 <span class="text-2xl font-normal">MXN</span>
+                </p>
+              </div>
+
+              <div class="border-t border-white/10 pt-6 mt-6">
+                <p class="text-gray-400 text-sm mb-1">
+                  En 5 años habrás ahorrado:
+                </p>
+                <p
+                  id="fiveYearSavings"
+                  class="text-3xl font-bold text-thor-cyan"
+                >
+                  $38,400 MXN
+                </p>
+                <p class="text-xs text-gray-500 mt-2">
+                  *Cálculo basado en un ahorro promedio del 80% en gas LP.
+                </p>
+              </div>
+
+              <a
+                href="https://wa.me/525584122228?text=Hola,%20hice%20el%20cálculo%20y%20quiero%20empezar%20a%20ahorrar."
+                target="_blank"
+                class="mt-8 block w-full py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition shadow-lg transform hover:-translate-y-1"
+              >
+                ¡Quiero este Ahorro!
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-20 relative overflow-hidden bg-thor-dark">
+        <div
+          class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"
+        ></div>
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-thor-dark via-transparent to-thor-dark opacity-90"
+        ></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div
+            class="bg-white/5 backdrop-blur-lg p-10 rounded-3xl border border-white/10 shadow-2xl hover:border-thor-cyan/50 transition duration-500"
+          >
             <div class="text-center mb-10">
-                <h3 class="text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-thor-cyan to-blue-400 mb-2">Comunidad Solar</h3>
-                <p class="text-gray-400">Únete a nuestra red para recibir tips de ahorro y promociones exclusivas.</p>
+              <h3
+                class="text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-thor-cyan to-blue-400 mb-2"
+              >
+                Comunidad Solar
+              </h3>
+              <p class="text-gray-400">
+                Únete a nuestra red para recibir tips de ahorro y promociones
+                exclusivas.
+              </p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <a href="https://facebook.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-[#1877F2] transition duration-300 border border-white/5 hover:border-transparent">
-                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    <span class="font-bold text-sm text-gray-400 group-hover:text-white">Facebook</span>
-                </a>
-                
-                <a href="https://instagram.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition duration-300 border border-white/5 hover:border-transparent">
-                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    <span class="font-bold text-sm text-gray-400 group-hover:text-white">Instagram</span>
-                </a>
+              <a
+                href="https://facebook.com/thorsolar"
+                target="_blank"
+                class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-[#1877F2] transition duration-300 border border-white/5 hover:border-transparent"
+              >
+                <svg
+                  class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+                <span
+                  class="font-bold text-sm text-gray-400 group-hover:text-white"
+                  >Facebook</span
+                >
+              </a>
 
-                <a href="https://x.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-black transition duration-300 border border-white/5 hover:border-transparent">
-                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    <span class="font-bold text-sm text-gray-400 group-hover:text-white">X / Twitter</span>
-                </a>
+              <a
+                href="https://instagram.com/thorsolar"
+                target="_blank"
+                class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition duration-300 border border-white/5 hover:border-transparent"
+              >
+                <svg
+                  class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+                <span
+                  class="font-bold text-sm text-gray-400 group-hover:text-white"
+                  >Instagram</span
+                >
+              </a>
 
-                <a href="https://tiktok.com/@thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-[#000000] hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition duration-300 border border-white/5 hover:border-thor-cyan">
-                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-                    <span class="font-bold text-sm text-gray-400 group-hover:text-white">TikTok</span>
-                </a>
+              <a
+                href="https://x.com/thorsolar"
+                target="_blank"
+                class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-black transition duration-300 border border-white/5 hover:border-transparent"
+              >
+                <svg
+                  class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+                <span
+                  class="font-bold text-sm text-gray-400 group-hover:text-white"
+                  >X / Twitter</span
+                >
+              </a>
+
+              <a
+                href="https://tiktok.com/@thorsolar"
+                target="_blank"
+                class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-[#000000] hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition duration-300 border border-white/5 hover:border-thor-cyan"
+              >
+                <svg
+                  class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                  />
+                </svg>
+                <span
+                  class="font-bold text-sm text-gray-400 group-hover:text-white"
+                  >TikTok</span
+                >
+              </a>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
     </main>
 
     <footer class="bg-thor-dark text-white pt-12 pb-6 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-             <div class="mb-4 flex items-center">
-                 <span class="text-3xl font-display font-black tracking-widest">THOR<span class="text-thor-gold">SOLAR</span></span>
-             </div>
-             <div class="flex space-x-6 mb-8">
-                 <a href="#" class="text-gray-400 hover:text-thor-gold transition">Aviso de Privacidad</a>
-                 <a href="contacto.html" class="text-gray-400 hover:text-thor-gold transition">Contacto</a>
-             </div>
-             <p class="text-gray-500 text-sm text-center">&copy; 2025 ThorSolar. Todos los derechos reservados.</p>
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center"
+      >
+        <div class="mb-4 flex items-center">
+          <span class="text-3xl font-display font-black tracking-widest"
+            >THOR<span class="text-thor-gold">SOLAR</span></span
+          >
         </div>
+        <div class="flex space-x-6 mb-8">
+          <a href="#" class="text-gray-400 hover:text-thor-gold transition"
+            >Aviso de Privacidad</a
+          >
+          <a
+            href="contacto.html"
+            class="text-gray-400 hover:text-thor-gold transition"
+            >Contacto</a
+          >
+        </div>
+        <p class="text-gray-500 text-sm text-center">
+          &copy; 2025 ThorSolar. Todos los derechos reservados.
+        </p>
+      </div>
     </footer>
 
     <script>
-        // --- NAVBAR STICKY ---
-        const navbar = document.getElementById("navbar");
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add("scrolled");
-                navbar.classList.remove("py-4");
-            } else {
-                navbar.classList.remove("scrolled");
-                navbar.classList.add("py-4");
-            }
+      // --- NAVBAR STICKY ---
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add("scrolled");
+          navbar.classList.remove("py-4");
+        } else {
+          navbar.classList.remove("scrolled");
+          navbar.classList.add("py-4");
+        }
+      });
+
+      // --- MENÚ MÓVIL ---
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () =>
+          mobileMenu.classList.add("hidden")
+        );
+      });
+
+      let currentPeople = 3; // Valor por defecto
+
+      function syncInputs(val) {
+        document.getElementById("gasInput").value = val;
+        updateCalculator();
+      }
+
+      function setPeople(num) {
+        currentPeople = num;
+        // Actualizar estilo botones
+        document.querySelectorAll(".people-btn").forEach((btn) => {
+          btn.classList.remove("bg-thor-gold", "text-thor-dark", "active");
+          btn.classList.add("text-gray-300", "bg-white/5");
+          if (parseInt(btn.dataset.val) === num) {
+            btn.classList.remove("text-gray-300", "bg-white/5");
+            btn.classList.add("bg-thor-gold", "text-thor-dark", "active");
+          }
+        });
+        updateCalculator();
+      }
+
+      function updateCalculator() {
+        // 1. Obtener valores
+        let gasSpend =
+          parseFloat(document.getElementById("gasInput").value) || 0;
+
+        // Sincronizar slider si se escribió manual
+        document.getElementById("gasRange").value = gasSpend;
+
+        // 2. Calcular Ahorros (80% regla general)
+        const savingsRate = 0.8;
+        const monthlySave = gasSpend * savingsRate;
+        const yearlySave = monthlySave * 12;
+        const fiveYearSave = yearlySave * 5;
+
+        // 3. Determinar Modelo Recomendado
+        let model = "Gravedad 150L";
+        if (currentPeople >= 5 && currentPeople <= 7) {
+          model = "Presurizado 200L";
+        } else if (currentPeople >= 8) {
+          model = "Industrial 300L";
+        }
+
+        // 4. Actualizar DOM con formato moneda
+        const formatter = new Intl.NumberFormat("es-MX", {
+          style: "currency",
+          currency: "MXN",
+          minimumFractionDigits: 0,
         });
 
-        // --- MENÚ MÓVIL ---
-        const menuButton = document.getElementById("menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
+        document.getElementById(
+          "monthlySavings"
+        ).innerHTML = `${formatter.format(
+          monthlySave
+        )} <span class="text-base font-normal">MXN</span>`;
+        document.getElementById(
+          "yearlySavings"
+        ).innerHTML = `${formatter.format(
+          yearlySave
+        )} <span class="text-2xl font-normal">MXN</span>`;
+        document.getElementById("fiveYearSavings").textContent =
+          formatter.format(fiveYearSave) + " MXN";
+        document.getElementById("recommendedModel").textContent = model;
+      }
 
-        menuButton.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
-
-        document.querySelectorAll("#mobile-menu a").forEach((link) => {
-            link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
-        });
+      // Inicializar visualmente el botón activo
+      setPeople(3);
     </script>
-</body>
+  </body>
 </html>
