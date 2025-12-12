@@ -1,365 +1,641 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThorSolar - Energía Legendaria</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ThorSolar - Energía Legendaria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap"
-    rel="stylesheet" />
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            thor: {
-              dark: "#0f172a",
-              blue: "#1e3a8a",
-              cyan: "#06b6d4",
-              gold: "#fbbf24",
-              goldDark: "#d97706",
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              thor: {
+                dark: "#0f172a",
+                blue: "#1e3a8a",
+                cyan: "#06b6d4",
+                gold: "#fbbf24",
+                goldDark: "#d97706",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Montserrat", "sans-serif"],
             },
           },
-          fontFamily: {
-            sans: ["Inter", "sans-serif"],
-            display: ["Montserrat", "sans-serif"],
-          },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-    /* Animación extra para el botón de WhatsApp */
-    .whatsapp-float {
-      animation: pulse-green 2s infinite;
-    }
-    
-    @keyframes pulse-green {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
+      /* Animación extra para el botón de WhatsApp */
+      .whatsapp-float {
+        animation: pulse-green 2s infinite;
+      }
 
-    .scrolled {
-      background-color: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
+      @keyframes pulse-green {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
 
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: #fbbf24;
-    }
+      .scrolled {
+        background-color: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
 
-    .product-img {
-      transition: transform 0.5s ease;
-    }
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-color: #fbbf24;
+      }
 
-    .product-container:hover .product-img {
-      transform: scale(1.03);
-    }
-  </style>
-</head>
+      .product-img {
+        transition: transform 0.5s ease;
+      }
 
-<body class="font-sans text-gray-700 antialiased bg-gray-50">
-<a href="https://wa.me/525584122228?text=Hola%20ThorSolar,%20quiero%20información%20general." 
-   target="_blank"
-   class="whatsapp-float fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-2xl hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 group"
-   aria-label="Contactar por WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white fill-current" viewBox="0 0 448 512">
-    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-  </svg>
-</a>
+      .product-container:hover .product-img {
+        transform: scale(1.03);
+      }
 
-  <nav class="bg-thor-dark py-4 sticky top-0 z-40 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center">
-        <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.location.href='index.html'">
-          <img src="/logo/logo_original_modificado.png" alt="ThorSolar Logo"
-            class="w-20 h-20 md:w-14 md:h-14 rounded-full border-2 border-thor-gold shadow-[0_0_15px_rgba(251,191,36,0.6)] object-cover hover:scale-110 transition duration-300">
-          <span class="text-2xl font-display font-black text-white tracking-wider hidden sm:block">
-            THOR<span class="text-thor-gold">SOLAR</span>
-          </span>
-          <span class="text-xl font-display font-black text-white tracking-wider sm:hidden">THOR</span>
-        </div>
+      /* Estilo base del botón (Inactivo) */
+      .filter-btn {
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0; /* Borde gris suave */
+        color: #64748b; /* Texto gris */
+        background-color: white;
+        padding: 0.5rem 1.25rem; /* px-5 py-2 */
+        border-radius: 9999px; /* rounded-full */
+        font-weight: 500;
+      }
 
-        <div class="hidden md:flex space-x-8 items-center">
-          <a href="index.html"
-            class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide">Inicio</a>
-          <div class="relative group">
-            <button
-              class="flex items-center gap-1 text-gray-300 group-hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide outline-none">
-              Productos
-              <svg xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+      /* Estilo al pasar el mouse (Hover) */
+      .filter-btn:hover {
+        border-color: #fbbf24; /* thor-gold */
+        color: #0f172a; /* thor-dark */
+      }
 
-            <div
-              class="absolute left-0 mt-0 w-48 pt-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 transform origin-top z-50">
-              <div class="bg-thor-dark border border-gray-700 rounded-xl shadow-2xl overflow-hidden flex flex-col">
-                <a href="./productos/calentadores.html"
-                  class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-thor-gold border-b border-gray-800 transition flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-thor-gold"></span>
-                  Calentadores
-                </a>
-                <a href="./productos/celdas.html"
-                  class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-thor-cyan border-b border-gray-800 transition flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-thor-cyan"></span>
-                  Celdas
-                </a>
-                <a href="./productos/luminarias.html"
-                  class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-white"></span>
-                  Luminarias
-                </a>
+      /* Estilo cuando está SELECCIONADO (Active) */
+      .filter-btn.active {
+        background-color: #0f172a; /* thor-dark */
+        color: #fbbf24; /* thor-gold */
+        border-color: #0f172a;
+        font-weight: 700;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-gray-700 antialiased bg-gray-50">
+    <a
+      href="https://wa.me/525584122228?text=Hola%20ThorSolar,%20quiero%20información%20general."
+      target="_blank"
+      class="whatsapp-float fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-2xl hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 group"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-9 h-9 text-white fill-current"
+        viewBox="0 0 448 512"
+      >
+        <path
+          d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+        />
+      </svg>
+    </a>
+
+    <nav class="bg-thor-dark py-4 sticky top-0 z-40 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <div
+            class="flex-shrink-0 flex items-center gap-3 cursor-pointer"
+            onclick="window.location.href='index.html'"
+          >
+            <img
+              src="/logo/logo_original_modificado.png"
+              alt="ThorSolar Logo"
+              class="w-20 h-20 md:w-14 md:h-14 rounded-full border-2 border-thor-gold shadow-[0_0_15px_rgba(251,191,36,0.6)] object-cover hover:scale-110 transition duration-300"
+            />
+            <span
+              class="text-2xl font-display font-black text-white tracking-wider hidden sm:block"
+            >
+              THOR<span class="text-thor-gold">SOLAR</span>
+            </span>
+            <span
+              class="text-xl font-display font-black text-white tracking-wider sm:hidden"
+              >THOR</span
+            >
+          </div>
+
+          <div class="hidden md:flex space-x-8 items-center">
+            <a
+              href="../index.html"
+              class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide"
+              >Inicio</a
+            >
+
+            <div class="relative group">
+              <button
+                class="flex items-center gap-1 text-gray-300 group-hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide outline-none"
+              >
+                Productos
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 transition-transform duration-300 group-hover:rotate-180"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 mt-0 w-48 pt-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 transform origin-top z-50"
+              >
+                <div
+                  class="bg-thor-dark border border-gray-700 rounded-xl shadow-2xl overflow-hidden flex flex-col"
+                >
+                  <a
+                    href="./calentadores.html"
+                    class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-thor-gold border-b border-gray-800 transition flex items-center gap-2"
+                  >
+                    <span class="w-2 h-2 rounded-full bg-thor-gold"></span>
+                    Calentadores
+                  </a>
+                  <a
+                    href="./celdas.html"
+                    class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-thor-cyan border-b border-gray-800 transition flex items-center gap-2"
+                  >
+                    <span class="w-2 h-2 rounded-full bg-thor-cyan"></span>
+                    Celdas
+                  </a>
+                  <a
+                    href="./luminarias.html"
+                    class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition flex items-center gap-2"
+                  >
+                    <span class="w-2 h-2 rounded-full bg-white"></span>
+                    Luminarias
+                  </a>
+                </div>
               </div>
             </div>
+
+            <a
+              href="mantenimiento.html"
+              class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide"
+              >Mantenimiento</a
+            >
+            <a
+              href="nosotros.html"
+              class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide"
+              >Nosotros</a
+            >
+            <a
+              href="contacto.html"
+              class="text-thor-gold font-bold text-sm uppercase tracking-wide border-b-2 border-thor-gold pb-1"
+              >Contacto</a
+            >
           </div>
-          <a href="mantenimiento.html"
-            class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide">Mantenimiento</a>
-          <a href="productos/nosotros.html"
-            class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide">Nosotros</a>
-          <a href="productos/contacto.html"
-            class="text-thor-gold font-bold text-sm uppercase tracking-wide border-b-2 border-thor-gold pb-1">Contacto</a>
+
+          <button
+            id="menu-button"
+            class="md:hidden text-thor-gold hover:text-white transition"
+          >
+            <svg
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
         </div>
-
-        <button id="menu-button" class="md:hidden text-thor-gold hover:text-white transition">
-          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </button>
       </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-thor-dark border-t border-gray-800 absolute w-full z-50">
-      <div class="px-4 pt-4 pb-6 space-y-2">
-        <a href="index.html"
-          class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Inicio</a>
 
-        <div class="space-y-1">
-          <div class="px-3 py-2 text-thor-gold font-bold uppercase text-xs tracking-wider opacity-80">Categorías de
-            Productos</div>
-          <a href="./productos/calentadores.html"
-            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-thor-gold hover:bg-gray-800 border-l-2 border-transparent hover:border-thor-gold transition">
-            • Calentadores Solares
-          </a>
-          <a href="./productos/celdas.html"
-            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-thor-cyan hover:bg-gray-800 border-l-2 border-transparent hover:border-thor-cyan transition">
-            • Celdas Fotovoltaicas
-          </a>
-          <a href="./productos/luminarias.html"
-            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 border-l-2 border-transparent hover:border-white transition">
-            • Luminarias
-          </a>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-thor-dark border-t border-gray-800 absolute w-full z-50"
+      >
+        <div class="px-4 pt-4 pb-6 space-y-2">
+          <a
+            href="../index.html"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Inicio</a
+          >
+          <div class="space-y-1">
+            <div
+              class="px-3 py-2 text-thor-gold font-bold uppercase text-xs tracking-wider opacity-80"
+            >
+              Categorías de Productos
+            </div>
+            <a
+              href="./calentadores.html"
+              class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-thor-gold hover:bg-gray-800 border-l-2 border-transparent hover:border-thor-gold transition"
+              >• Calentadores Solares</a
+            >
+            <a
+              href="./celdas.html"
+              class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-thor-cyan hover:bg-gray-800 border-l-2 border-transparent hover:border-thor-cyan transition"
+              >• Celdas Fotovoltaicas</a
+            >
+            <a
+              href="./luminarias.html"
+              class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 border-l-2 border-transparent hover:border-white transition"
+              >• Luminarias</a
+            >
+          </div>
+          <a
+            href="../mantenimiento.html"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Mantenimiento</a
+          >
+          <a
+            href="../nosotros.html"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+            >Nosotros</a
+          >
+          <a
+            href="../contacto.html"
+            class="block px-3 py-3 rounded-md text-base font-medium text-thor-gold hover:text-white hover:bg-gray-800"
+            >Contacto</a
+          >
         </div>
-
-        <a href="mantenimiento.html"
-          class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Mantenimiento</a>
-        <a href="nosotros.html"
-          class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Nosotros</a>
-        <a href="contacto.html"
-          class="block px-3 py-3 rounded-md text-base font-medium text-thor-gold hover:text-white hover:bg-gray-800">Contacto</a>
       </div>
-    </div>
-  </nav>
+    </nav>
 
     <header class="bg-thor-dark py-16 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"></div>
-        
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-2xl bg-gradient-to-t from-white/5 to-transparent rounded-full blur-3xl"></div>
+      <div
+        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"
+      ></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="text-3xl md:text-5xl font-display font-black text-white mb-4">
-                Luz Autónoma <span class="text-thor-gold">&</span> Segura
-            </h1>
-            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                Iluminación pública y residencial sin cables, sin recibos y con encendido automático.
-            </p>
-        </div>
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-2xl bg-gradient-to-t from-white/5 to-transparent rounded-full blur-3xl"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+      >
+        <h1
+          class="text-3xl md:text-5xl font-display font-black text-white mb-4"
+        >
+          Luz Autónoma <span class="text-thor-gold">&</span> Segura
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Iluminación pública y residencial sin cables, sin recibos y con
+          encendido automático.
+        </p>
+      </div>
     </header>
 
-    <div class="bg-white border-b border-gray-200 sticky top-[85px] z-30 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="filter-container" class="flex space-x-4 overflow-x-auto py-4 no-scrollbar items-center justify-start md:justify-center">
-                <button onclick="filterSelection('all')" class="filter-btn active whitespace-nowrap cursor-pointer">Ver Todas</button>
-                <button onclick="filterSelection('Suburbana')" class="filter-btn whitespace-nowrap cursor-pointer">Suburbanas (Calle)</button>
-                <button onclick="filterSelection('Reflector')" class="filter-btn whitespace-nowrap cursor-pointer">Reflectores (Jardín)</button>
-                <button onclick="filterSelection('Urbana')" class="filter-btn whitespace-nowrap cursor-pointer">Punta de Poste</button>
-                <button onclick="filterSelection('All-in-Two')" class="filter-btn whitespace-nowrap cursor-pointer">Alta Potencia (Split)</button>
-            </div>
+    <div
+      class="bg-white border-b border-gray-200 sticky top-[85px] z-30 shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          id="filter-container"
+          class="flex space-x-4 overflow-x-auto py-4 no-scrollbar items-center justify-start md:justify-center"
+        >
+          <button
+            onclick="filterSelection('all')"
+            class="filter-btn active whitespace-nowrap cursor-pointer"
+          >
+            Ver Todas
+          </button>
+          <button
+            onclick="filterSelection('Suburbana')"
+            class="filter-btn whitespace-nowrap cursor-pointer"
+          >
+            Suburbanas (Calle)
+          </button>
+          <button
+            onclick="filterSelection('Reflector')"
+            class="filter-btn whitespace-nowrap cursor-pointer"
+          >
+            Reflectores (Jardín)
+          </button>
+          <button
+            onclick="filterSelection('Urbana')"
+            class="filter-btn whitespace-nowrap cursor-pointer"
+          >
+            Punta de Poste
+          </button>
+          <button
+            onclick="filterSelection('All-in-Two')"
+            class="filter-btn whitespace-nowrap cursor-pointer"
+          >
+            Alta Potencia (Split)
+          </button>
         </div>
+      </div>
     </div>
 
     <main class="flex-grow py-12 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-            <div id="no-products" class="hidden text-center py-20 text-gray-400">
-                <p class="text-xl">No hay productos en esta categoría por el momento.</p>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          id="product-grid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        ></div>
+        <div id="no-products" class="hidden text-center py-20 text-gray-400">
+          <p class="text-xl">
+            No hay productos en esta categoría por el momento.
+          </p>
         </div>
+      </div>
     </main>
 
     <section class="bg-thor-dark py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
-            <div class="mb-6 md:mb-0">
-                <h3 class="text-2xl font-display font-bold text-white">Ilumina calles oscuras hoy mismo</h3>
-                <p class="text-gray-400">Instalación rápida. No necesitas romper calles ni tender cableado.</p>
-            </div>
-            <a href="https://wa.me/525584122228?text=Hola,%20me%20interesan%20luminarias%20para%20un%20proyecto." target="_blank" class="px-8 py-3 bg-white text-thor-dark font-bold rounded-xl hover:bg-gray-200 transition shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                Cotizar Mayoreo
-            </a>
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between"
+      >
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-display font-bold text-white">
+            Ilumina calles oscuras hoy mismo
+          </h3>
+          <p class="text-gray-400">
+            Instalación rápida. No necesitas romper calles ni tender cableado.
+          </p>
         </div>
+        <a
+          href="https://wa.me/525584122228?text=Hola,%20me%20interesan%20luminarias%20para%20un%20proyecto."
+          target="_blank"
+          class="px-8 py-3 bg-white text-thor-dark font-bold rounded-xl hover:bg-gray-200 transition shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            ></path>
+          </svg>
+          Cotizar Mayoreo
+        </a>
+      </div>
     </section>
 
-    <footer class="bg-black text-white pt-12 pb-6 border-t border-gray-900 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-             <div class="mb-4 flex items-center">
-                 <span class="text-3xl font-display font-black tracking-widest">THOR<span class="text-thor-gold">SOLAR</span></span>
-             </div>
-             <p class="text-gray-500 text-sm text-center">&copy; 2025 ThorSolar. Todos los derechos reservados.</p>
+    <footer
+      class="bg-black text-white pt-12 pb-6 border-t border-gray-900 mt-auto"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center"
+      >
+        <div class="mb-4 flex items-center">
+          <span class="text-3xl font-display font-black tracking-widest"
+            >THOR<span class="text-thor-gold">SOLAR</span></span
+          >
         </div>
+        <p class="text-gray-500 text-sm text-center">
+          &copy; 2025 ThorSolar. Todos los derechos reservados.
+        </p>
+      </div>
     </footer>
 
-    <div id="product-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-        <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
-            <div class="relative bg-thor-dark border border-gray-700 rounded-3xl text-left overflow-hidden shadow-2xl shadow-white/10 transform transition-all sm:my-8 sm:max-w-3xl w-full flex flex-col md:flex-row">
-                
-                <div class="md:w-1/2 h-64 md:h-auto bg-gray-800 relative">
-                    <img id="modal-product-image" src="" alt="" class="w-full h-full object-cover">
-                    <div class="absolute top-4 right-4 md:left-4 md:right-auto bg-black/50 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-white/20 transition md:hidden" onclick="closeModal()">
-                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </div>
-                </div>
-
-                <div class="md:w-1/2 p-8 md:p-10 flex flex-col">
-                    <div class="flex justify-between items-start">
-                        <span id="modal-product-category" class="text-xs font-bold text-thor-gold uppercase tracking-wider mb-2 block">Categoría</span>
-                        <button onclick="closeModal()" class="hidden md:block text-gray-400 hover:text-white">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                        </button>
-                    </div>
-
-                    <h3 id="modal-product-name" class="text-3xl font-display font-black text-white mb-4 leading-tight">Nombre</h3>
-                    <p id="modal-product-description" class="text-gray-300 mb-6 leading-relaxed flex-grow">Descripción</p>
-                    
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/10 mb-6">
-                        <p class="text-sm font-bold text-thor-gold mb-1">Detalles Técnicos:</p>
-                        <p id="modal-product-specs" class="text-sm text-gray-400">Specs...</p>
-                    </div>
-
-                    <a id="modal-whatsapp-link" href="#" target="_blank" class="block w-full text-center py-4 bg-white hover:bg-gray-200 text-thor-dark font-bold rounded-xl transition shadow-[0_0_15px_rgba(255,255,255,0.3)] transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.544 2 2.02 6.49 2.01 11.96c0 1.765.46 3.456 1.32 4.954L2 22l5.244-1.378a9.927 9.927 0 004.814 1.259c5.504 0 9.98-4.502 9.99-10.006C22.04 6.49 17.564 2 12.04 2zM17.5 14.3c-.2-.1-.8-.4-1-.4s-.3-.1-.5.3-.6.7-.8.8-.3.1-.6.1-.9-.3-1.1-.6-.8-.7-.9-1-.2-.4 0-.4s.2-.4.4-.6c.2-.2.4-.5.5-.7s.2-.4.1-.6-.2-.4-.3-.5c-.1-.1-.3-.2-.4-.3s-.3-.2-.5-.2h-.4c-.2 0-.5.1-.7.4-.2.2-.8.8-.8.9s-.1.2-.2.3c-.1.2-.2.4-.2.5s.1.2.2.3c.1.1.2.3.4.4s.3.2.5.3c.2.1.4.1.6.1s.4 0 .5-.1c.2-.1.8-.4 1-.6s.4-.4.5-.6c.1-.2.2-.4.2-.6s0-.4-.1-.5z" /></svg>
-                        Solicitar Ficha Técnica
-                    </a>
-                </div>
+    <div
+      id="product-modal"
+      class="fixed inset-0 z-50 hidden"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity"
+        onclick="closeModal()"
+      ></div>
+      <div
+        class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0"
+      >
+        <div
+          class="relative bg-thor-dark border border-gray-700 rounded-3xl text-left overflow-hidden shadow-2xl shadow-white/10 transform transition-all sm:my-8 sm:max-w-3xl w-full flex flex-col md:flex-row"
+        >
+          <div class="md:w-1/2 h-64 md:h-auto bg-gray-800 relative">
+            <img
+              id="modal-product-image"
+              src=""
+              alt=""
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute top-4 right-4 md:left-4 md:right-auto bg-black/50 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-white/20 transition md:hidden"
+              onclick="closeModal()"
+            >
+              <svg
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </div>
+          </div>
+
+          <div class="md:w-1/2 p-8 md:p-10 flex flex-col">
+            <div class="flex justify-between items-start">
+              <span
+                id="modal-product-category"
+                class="text-xs font-bold text-thor-gold uppercase tracking-wider mb-2 block"
+                >Categoría</span
+              >
+              <button
+                onclick="closeModal()"
+                class="hidden md:block text-gray-400 hover:text-white"
+              >
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <h3
+              id="modal-product-name"
+              class="text-3xl font-display font-black text-white mb-4 leading-tight"
+            >
+              Nombre
+            </h3>
+            <p
+              id="modal-product-description"
+              class="text-gray-300 mb-6 leading-relaxed flex-grow"
+            >
+              Descripción
+            </p>
+
+            <div class="bg-white/5 p-4 rounded-xl border border-white/10 mb-6">
+              <p class="text-sm font-bold text-thor-gold mb-1">
+                Detalles Técnicos:
+              </p>
+              <p id="modal-product-specs" class="text-sm text-gray-400">
+                Specs...
+              </p>
+            </div>
+
+            <a
+              id="modal-whatsapp-link"
+              href="#"
+              target="_blank"
+              class="block w-full text-center py-4 bg-white hover:bg-gray-200 text-thor-dark font-bold rounded-xl transition shadow-[0_0_15px_rgba(255,255,255,0.3)] transform hover:-translate-y-1 flex items-center justify-center gap-2"
+            >
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12.04 2C6.544 2 2.02 6.49 2.01 11.96c0 1.765.46 3.456 1.32 4.954L2 22l5.244-1.378a9.927 9.927 0 004.814 1.259c5.504 0 9.98-4.502 9.99-10.006C22.04 6.49 17.564 2 12.04 2zM17.5 14.3c-.2-.1-.8-.4-1-.4s-.3-.1-.5.3-.6.7-.8.8-.3.1-.6.1-.9-.3-1.1-.6-.8-.7-.9-1-.2-.4 0-.4s.2-.4.4-.6c.2-.2.4-.5.5-.7s.2-.4.1-.6-.2-.4-.3-.5c-.1-.1-.3-.2-.4-.3s-.3-.2-.5-.2h-.4c-.2 0-.5.1-.7.4-.2.2-.8.8-.8.9s-.1.2-.2.3c-.1.2-.2.4-.2.5s.1.2.2.3c.1.1.2.3.4.4s.3.2.5.3c.2.1.4.1.6.1s.4 0 .5-.1c.2-.1.8-.4 1-.6s.4-.4.5-.6c.1-.2.2-.4.2-.6s0-.4-.1-.5z"
+                />
+              </svg>
+              Solicitar Ficha Técnica
+            </a>
+          </div>
         </div>
+      </div>
     </div>
 
     <script>
-        // --- DATA DE LUMINARIAS ---
-        const products = [
-            // SUBURBANAS (Calle - All in One)
-            { 
-                id: 1, 
-                name: "Suburbana All-in-One 100W", 
-                category: "Suburbana",
-                description: "Luminaria compacta para calles residenciales o privadas. Sensor de movimiento integrado: se atenúa al 30% cuando no hay nadie para ahorrar batería y sube al 100% al detectar presencia.",
-                short: "100W | Sensor de Movimiento",
-                specs: "IP65 (Lluvia) / Altura ideal: 4-5m / Luz Blanca 6500K",
-                image: "https://placehold.co/600x600/333333/ffffff?text=Luminaria+100W" 
-            },
-            { 
-                id: 2, 
-                name: "Suburbana All-in-One 200W", 
-                category: "Suburbana",
-                description: "Nuestro modelo más vendido para vialidades secundarias. Potencia superior con mayor banco de baterías. Incluye control remoto para programar horas de encendido.",
-                short: "200W | Control Remoto",
-                specs: "IP65 / Altura ideal: 5-7m / Carcasa ABS de alto impacto",
-                image: "https://placehold.co/600x600/333333/ffffff?text=Luminaria+200W" 
-            },
-            { 
-                id: 3, 
-                name: "Suburbana All-in-One 300W", 
-                category: "Suburbana",
-                description: "Máxima potencia en formato compacto. Excelente para entradas de fraccionamientos o perímetros industriales.",
-                short: "300W | Alto Brillo",
-                specs: "IP65 / Altura ideal: 6-8m / Batería Litio LifePO4",
-                image: "https://placehold.co/600x600/333333/ffffff?text=Luminaria+300W" 
-            },
+      // --- DATA DE LUMINARIAS ---
+      const products = [
+        // SUBURBANAS (Calle - All in One)
+        {
+          id: 1,
+          name: "Suburbana All-in-One 100W",
+          category: "Suburbana",
+          description:
+            "Luminaria compacta para calles residenciales o privadas. Sensor de movimiento integrado: se atenúa al 30% cuando no hay nadie para ahorrar batería y sube al 100% al detectar presencia.",
+          short: "100W | Sensor de Movimiento",
+          specs: "IP65 (Lluvia) / Altura ideal: 4-5m / Luz Blanca 6500K",
+          image:
+            "https://placehold.co/600x600/333333/ffffff?text=Luminaria+100W",
+        },
+        {
+          id: 2,
+          name: "Suburbana All-in-One 200W",
+          category: "Suburbana",
+          description:
+            "Nuestro modelo más vendido para vialidades secundarias. Potencia superior con mayor banco de baterías. Incluye control remoto para programar horas de encendido.",
+          short: "200W | Control Remoto",
+          specs: "IP65 / Altura ideal: 5-7m / Carcasa ABS de alto impacto",
+          image:
+            "https://placehold.co/600x600/333333/ffffff?text=Luminaria+200W",
+        },
+        {
+          id: 3,
+          name: "Suburbana All-in-One 300W",
+          category: "Suburbana",
+          description:
+            "Máxima potencia en formato compacto. Excelente para entradas de fraccionamientos o perímetros industriales.",
+          short: "300W | Alto Brillo",
+          specs: "IP65 / Altura ideal: 6-8m / Batería Litio LifePO4",
+          image:
+            "https://placehold.co/600x600/333333/ffffff?text=Luminaria+300W",
+        },
 
-            // REFLECTORES (Jardín / Fachada)
-            { 
-                id: 4, 
-                name: "Reflector Solar 100W", 
-                category: "Reflector",
-                description: "Ideal para iluminar patios, jardines o letreros comerciales. El panel solar está separado por un cable de 3m, permitiendo colocar la luz en sombra y el panel al sol.",
-                short: "Proyector LED Multiusos",
-                specs: "Cable 3m incluido / Impermeable / Control Remoto",
-                image: "https://placehold.co/600x600/333333/fbbf24?text=Reflector+100W" 
-            },
-            { 
-                id: 5, 
-                name: "Reflector Solar 300W", 
-                category: "Reflector",
-                description: "Potencia industrial para canchas deportivas pequeñas, estacionamientos o patios de maniobra. Construcción robusta en aluminio.",
-                short: "Uso rudo / Aluminio",
-                specs: "Alta disipación de calor / Indicador de carga",
-                image: "https://placehold.co/600x600/333333/fbbf24?text=Reflector+300W" 
-            },
+        // REFLECTORES (Jardín / Fachada)
+        {
+          id: 4,
+          name: "Reflector Solar 100W",
+          category: "Reflector",
+          description:
+            "Ideal para iluminar patios, jardines o letreros comerciales. El panel solar está separado por un cable de 3m, permitiendo colocar la luz en sombra y el panel al sol.",
+          short: "Proyector LED Multiusos",
+          specs: "Cable 3m incluido / Impermeable / Control Remoto",
+          image:
+            "https://placehold.co/600x600/333333/fbbf24?text=Reflector+100W",
+        },
+        {
+          id: 5,
+          name: "Reflector Solar 300W",
+          category: "Reflector",
+          description:
+            "Potencia industrial para canchas deportivas pequeñas, estacionamientos o patios de maniobra. Construcción robusta en aluminio.",
+          short: "Uso rudo / Aluminio",
+          specs: "Alta disipación de calor / Indicador de carga",
+          image:
+            "https://placehold.co/600x600/333333/fbbf24?text=Reflector+300W",
+        },
 
-            // PUNTA DE POSTE (Urbana)
-            { 
-                id: 6, 
-                name: "Luminaria OVNI 360°", 
-                category: "Urbana",
-                description: "Diseño circular tipo 'UFO' para parques, plazas y jardines. Ilumina en 360 grados eliminando puntos ciegos. Estética moderna y elegante.",
-                short: "Luz 360° para Parques",
-                specs: "150W / Diseño Decorativo / Poste 3-4m",
-                image: "https://placehold.co/600x600/333333/06b6d4?text=UFO+360" 
-            },
+        // PUNTA DE POSTE (Urbana)
+        {
+          id: 6,
+          name: "Luminaria OVNI 360°",
+          category: "Urbana",
+          description:
+            "Diseño circular tipo 'UFO' para parques, plazas y jardines. Ilumina en 360 grados eliminando puntos ciegos. Estética moderna y elegante.",
+          short: "Luz 360° para Parques",
+          specs: "150W / Diseño Decorativo / Poste 3-4m",
+          image: "https://placehold.co/600x600/333333/06b6d4?text=UFO+360",
+        },
 
-            // ALL IN TWO (Split / Alta Potencia)
-            { 
-                id: 7, 
-                name: "Split Solar 400W", 
-                category: "All-in-Two",
-                description: "Para carreteras o avenidas principales. El panel solar es independiente y de gran tamaño, garantizando carga incluso en días muy nublados. Brazo ajustable.",
-                short: "Vialidad Principal / Panel Separado",
-                specs: "Panel Policristalino Grande / Autonomía 2-3 noches",
-                image: "https://placehold.co/600x600/000000/ffffff?text=Split+400W" 
-            }
-        ];
+        // ALL IN TWO (Split / Alta Potencia)
+        {
+          id: 7,
+          name: "Split Solar 400W",
+          category: "All-in-Two",
+          description:
+            "Para carreteras o avenidas principales. El panel solar es independiente y de gran tamaño, garantizando carga incluso en días muy nublados. Brazo ajustable.",
+          short: "Vialidad Principal / Panel Separado",
+          specs: "Panel Policristalino Grande / Autonomía 2-3 noches",
+          image: "https://placehold.co/600x600/000000/ffffff?text=Split+400W",
+        },
+      ];
 
-        // --- RENDERIZADO ---
-        const productGrid = document.getElementById('product-grid');
-        const noProductsMsg = document.getElementById('no-products');
-        
-        function renderProducts(productsList = products) {
-            productGrid.innerHTML = ""; 
+      // --- RENDERIZADO ---
+      const productGrid = document.getElementById("product-grid");
+      const noProductsMsg = document.getElementById("no-products");
 
-            if (productsList.length === 0) {
-                noProductsMsg.classList.remove('hidden');
-            } else {
-                noProductsMsg.classList.add('hidden');
-                productGrid.innerHTML = productsList.map(product => `
+      function renderProducts(productsList = products) {
+        productGrid.innerHTML = "";
+
+        if (productsList.length === 0) {
+          noProductsMsg.classList.remove("hidden");
+        } else {
+          noProductsMsg.classList.add("hidden");
+          productGrid.innerHTML = productsList
+            .map(
+              (product) => `
                     <div class="product-card bg-thor-dark rounded-2xl overflow-hidden shadow-lg border border-gray-700 flex flex-col h-full cursor-pointer group transition duration-300" onclick="openModal(${product.id})">
                         <div class="h-64 overflow-hidden relative bg-gray-900">
                              <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100">
@@ -380,65 +656,71 @@
                             </div>
                         </div>
                     </div>
-                `).join('');
-            }
+                `
+            )
+            .join("");
         }
+      }
 
-        function filterSelection(category) {
-            let filteredProducts;
-            if (category === 'all') {
-                filteredProducts = products;
-            } else {
-                filteredProducts = products.filter(p => p.category === category);
-            }
-            renderProducts(filteredProducts);
-
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+      function filterSelection(category) {
+        let filteredProducts;
+        if (category === "all") {
+          filteredProducts = products;
+        } else {
+          filteredProducts = products.filter((p) => p.category === category);
         }
+        renderProducts(filteredProducts);
 
-        // --- MENU MÓVIL ---
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        const buttons = document.querySelectorAll(".filter-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+      }
 
-        // --- MODAL ---
-        const modal = document.getElementById('product-modal');
-        const mImage = document.getElementById('modal-product-image');
-        const mName = document.getElementById('modal-product-name');
-        const mCat = document.getElementById('modal-product-category');
-        const mDesc = document.getElementById('modal-product-description');
-        const mSpecs = document.getElementById('modal-product-specs');
-        const mLink = document.getElementById('modal-whatsapp-link');
+      // --- MENU MÓVIL ---
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuButton.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
 
-        function openModal(id) {
-            const prod = products.find(p => p.id === id);
-            if(!prod) return;
-            
-            mImage.src = prod.image;
-            mName.textContent = prod.name;
-            mCat.textContent = prod.category;
-            mDesc.textContent = prod.description;
-            mSpecs.textContent = prod.specs;
-            
-            const text = `Hola ThorSolar, me interesa cotizar: ${prod.name} (${prod.category})`;
-            mLink.href = `https://wa.me/525584122228?text=${encodeURIComponent(text)}`;
-            
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+      // --- MODAL ---
+      const modal = document.getElementById("product-modal");
+      const mImage = document.getElementById("modal-product-image");
+      const mName = document.getElementById("modal-product-name");
+      const mCat = document.getElementById("modal-product-category");
+      const mDesc = document.getElementById("modal-product-description");
+      const mSpecs = document.getElementById("modal-product-specs");
+      const mLink = document.getElementById("modal-whatsapp-link");
 
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+      function openModal(id) {
+        const prod = products.find((p) => p.id === id);
+        if (!prod) return;
 
-        window.onclick = function(event) {
-            if (event.target == modal) closeModal();
-        }
+        mImage.src = prod.image;
+        mName.textContent = prod.name;
+        mCat.textContent = prod.category;
+        mDesc.textContent = prod.description;
+        mSpecs.textContent = prod.specs;
 
-        renderProducts();
+        const text = `Hola ThorSolar, me interesa cotizar: ${prod.name} (${prod.category})`;
+        mLink.href = `https://wa.me/525584122228?text=${encodeURIComponent(
+          text
+        )}`;
+
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      window.onclick = function (event) {
+        if (event.target == modal) closeModal();
+      };
+
+      renderProducts();
     </script>
-</body>
+  </body>
 </html>

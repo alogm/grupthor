@@ -43,11 +43,19 @@
     .whatsapp-float {
       animation: pulse-green 2s infinite;
     }
-    
+
     @keyframes pulse-green {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
 
     .scrolled {
@@ -70,18 +78,52 @@
     .product-container:hover .product-img {
       transform: scale(1.03);
     }
+
+    /* Estilo base del botón (Inactivo) */
+    .filter-btn {
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+      /* Borde gris suave */
+      color: #64748b;
+      /* Texto gris */
+      background-color: white;
+      padding: 0.5rem 1.25rem;
+      /* px-5 py-2 */
+      border-radius: 9999px;
+      /* rounded-full */
+      font-weight: 500;
+    }
+
+    /* Estilo al pasar el mouse (Hover) */
+    .filter-btn:hover {
+      border-color: #fbbf24;
+      /* thor-gold */
+      color: #0f172a;
+      /* thor-dark */
+    }
+
+    /* Estilo cuando está SELECCIONADO (Active) */
+    .filter-btn.active {
+      background-color: #0f172a;
+      /* thor-dark */
+      color: #fbbf24;
+      /* thor-gold */
+      border-color: #0f172a;
+      font-weight: 700;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 
 <body class="font-sans text-gray-700 antialiased bg-gray-50">
-<a href="https://wa.me/525584122228?text=Hola%20ThorSolar,%20quiero%20información%20general." 
-   target="_blank"
-   class="whatsapp-float fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-2xl hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 group"
-   aria-label="Contactar por WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white fill-current" viewBox="0 0 448 512">
-    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-  </svg>
-</a>
+  <a href="https://wa.me/525584122228?text=Hola%20ThorSolar,%20quiero%20información%20general." target="_blank"
+    class="whatsapp-float fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-2xl hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 group"
+    aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white fill-current" viewBox="0 0 448 512">
+      <path
+        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+    </svg>
+  </a>
 
   <nav class="bg-thor-dark py-4 sticky top-0 z-40 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,8 +138,9 @@
         </div>
 
         <div class="hidden md:flex space-x-8 items-center">
-          <a href="index.html"
+          <a href="../index.html"
             class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide">Inicio</a>
+
           <div class="relative group">
             <button
               class="flex items-center gap-1 text-gray-300 group-hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide outline-none">
@@ -108,33 +151,30 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-
             <div
               class="absolute left-0 mt-0 w-48 pt-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 transform origin-top z-50">
               <div class="bg-thor-dark border border-gray-700 rounded-xl shadow-2xl overflow-hidden flex flex-col">
-                <a href="./productos/calentadores.html"
+                <a href="./calentadores.html"
                   class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-thor-gold border-b border-gray-800 transition flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-thor-gold"></span>
-                  Calentadores
+                  <span class="w-2 h-2 rounded-full bg-thor-gold"></span> Calentadores
                 </a>
-                <a href="./productos/celdas.html"
+                <a href="./celdas.html"
                   class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-thor-cyan border-b border-gray-800 transition flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-thor-cyan"></span>
-                  Celdas
+                  <span class="w-2 h-2 rounded-full bg-thor-cyan"></span> Celdas
                 </a>
-                <a href="./productos/luminarias.html"
+                <a href="./luminarias.html"
                   class="px-4 py-3 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-white"></span>
-                  Luminarias
+                  <span class="w-2 h-2 rounded-full bg-white"></span> Luminarias
                 </a>
               </div>
             </div>
           </div>
+
           <a href="mantenimiento.html"
             class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide">Mantenimiento</a>
-          <a href="productos/nosotros.html"
+          <a href="nosotros.html"
             class="text-gray-300 hover:text-thor-gold transition font-medium text-sm uppercase tracking-wide">Nosotros</a>
-          <a href="productos/contacto.html"
+          <a href="contacto.html"
             class="text-thor-gold font-bold text-sm uppercase tracking-wide border-b-2 border-thor-gold pb-1">Contacto</a>
         </div>
 
@@ -145,239 +185,263 @@
         </button>
       </div>
     </div>
+
     <div id="mobile-menu" class="hidden md:hidden bg-thor-dark border-t border-gray-800 absolute w-full z-50">
       <div class="px-4 pt-4 pb-6 space-y-2">
-        <a href="index.html"
+        <a href="../index.html"
           class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Inicio</a>
-
         <div class="space-y-1">
           <div class="px-3 py-2 text-thor-gold font-bold uppercase text-xs tracking-wider opacity-80">Categorías de
             Productos</div>
-          <a href="./productos/calentadores.html"
-            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-thor-gold hover:bg-gray-800 border-l-2 border-transparent hover:border-thor-gold transition">
-            • Calentadores Solares
-          </a>
-          <a href="./productos/celdas.html"
-            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-thor-cyan hover:bg-gray-800 border-l-2 border-transparent hover:border-thor-cyan transition">
-            • Celdas Fotovoltaicas
-          </a>
-          <a href="./productos/luminarias.html"
-            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 border-l-2 border-transparent hover:border-white transition">
-            • Luminarias
-          </a>
+          <a href="./calentadores.html"
+            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-thor-gold hover:bg-gray-800 border-l-2 border-transparent hover:border-thor-gold transition">•
+            Calentadores Solares</a>
+          <a href="./celdas.html"
+            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-thor-cyan hover:bg-gray-800 border-l-2 border-transparent hover:border-thor-cyan transition">•
+            Celdas Fotovoltaicas</a>
+          <a href="./luminarias.html"
+            class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 border-l-2 border-transparent hover:border-white transition">•
+            Luminarias</a>
         </div>
-
-        <a href="mantenimiento.html"
+        <a href="../mantenimiento.html"
           class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Mantenimiento</a>
-        <a href="nosotros.html"
+        <a href="../nosotros.html"
           class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Nosotros</a>
-        <a href="contacto.html"
+        <a href="../contacto.html"
           class="block px-3 py-3 rounded-md text-base font-medium text-thor-gold hover:text-white hover:bg-gray-800">Contacto</a>
       </div>
     </div>
   </nav>
 
-    <header class="bg-gradient-to-r from-thor-dark to-gray-900 py-16 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="text-3xl md:text-5xl font-display font-black text-white mb-4">
-                Calentadores <span class="text-thor-gold">Solares</span>
-            </h1>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
-                Olvídate del gas. Agua caliente garantizada para todo tipo de presión hidráulica.
-            </p>
-        </div>
-    </header>
-
-    <div class="bg-white border-b border-gray-200 sticky top-[85px] z-30 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="filter-container" class="flex space-x-4 overflow-x-auto py-4 no-scrollbar items-center justify-start md:justify-center">
-                <button onclick="filterSelection('all')" class="filter-btn active whitespace-nowrap cursor-pointer">Ver Todos</button>
-                <button onclick="filterSelection('Gravedad')" class="filter-btn whitespace-nowrap cursor-pointer">Gravedad (Tinaco)</button>
-                <button onclick="filterSelection('Presurizado')" class="filter-btn whitespace-nowrap cursor-pointer">Alta Presión</button>
-                <button onclick="filterSelection('Industrial')" class="filter-btn whitespace-nowrap cursor-pointer">Industriales</button>
-                <button onclick="filterSelection('Refacciones')" class="filter-btn whitespace-nowrap cursor-pointer">Refacciones</button>
-            </div>
-        </div>
+  <header class="bg-gradient-to-r from-thor-dark to-gray-900 py-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20">
     </div>
-
-    <main class="flex-grow py-12 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-            <div id="no-products" class="hidden text-center py-20 text-gray-500">
-                <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p class="text-xl">No hay productos en esta categoría por el momento.</p>
-            </div>
-        </div>
-    </main>
-
-    <section class="bg-gray-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
-            <div class="mb-6 md:mb-0">
-                <h3 class="text-2xl font-display font-bold text-thor-dark">¿Dudas con la presión de tu agua?</h3>
-                <p class="text-gray-600">Si tienes hidroneumático necesitas un equipo especial. ¡Pregúntanos!</p>
-            </div>
-            <a href="https://wa.me/525584122228?text=Hola,%20tengo%20dudas%20sobre%20qué%20calentador%20necesito." target="_blank" class="px-8 py-3 bg-thor-dark text-white font-bold rounded-xl hover:bg-thor-blue transition shadow-lg flex items-center">
-                <svg class="w-5 h-5 mr-2 text-thor-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                Hablar con un Técnico
-            </a>
-        </div>
-    </section>
-
-    <footer class="bg-thor-dark text-white pt-12 pb-6 border-t border-gray-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-             <div class="mb-4 flex items-center">
-                 <span class="text-3xl font-display font-black tracking-widest">THOR<span class="text-thor-gold">SOLAR</span></span>
-             </div>
-             <p class="text-gray-500 text-sm text-center">&copy; 2025 ThorSolar. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <div id="product-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
-        <div class="absolute inset-0 bg-thor-dark/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-        <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
-            <div class="relative bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-3xl w-full flex flex-col md:flex-row">
-                
-                <div class="md:w-1/2 h-64 md:h-auto bg-gray-100 relative">
-                    <img id="modal-product-image" src="" alt="" class="w-full h-full object-cover">
-                    <div class="absolute top-4 right-4 md:left-4 md:right-auto bg-white/20 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-white/40 transition md:hidden" onclick="closeModal()">
-                        <svg class="h-6 w-6 text-thor-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </div>
-                </div>
-
-                <div class="md:w-1/2 p-8 md:p-10 flex flex-col">
-                    <div class="flex justify-between items-start">
-                        <span id="modal-product-category" class="text-xs font-bold text-thor-gold uppercase tracking-wider mb-2 block">Categoría</span>
-                        <button onclick="closeModal()" class="hidden md:block text-gray-400 hover:text-thor-dark">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                        </button>
-                    </div>
-
-                    <h3 id="modal-product-name" class="text-3xl font-display font-black text-thor-dark mb-4 leading-tight">Nombre</h3>
-                    <p id="modal-product-description" class="text-gray-600 mb-6 leading-relaxed flex-grow">Descripción</p>
-                    
-                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 mb-6">
-                        <p class="text-sm font-bold text-thor-blue mb-1">Especificaciones clave:</p>
-                        <p id="modal-product-specs" class="text-sm text-gray-500">Material, capacidad, etc.</p>
-                    </div>
-
-                    <a id="modal-whatsapp-link" href="#" target="_blank" class="block w-full text-center py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.544 2 2.02 6.49 2.01 11.96c0 1.765.46 3.456 1.32 4.954L2 22l5.244-1.378a9.927 9.927 0 004.814 1.259c5.504 0 9.98-4.502 9.99-10.006C22.04 6.49 17.564 2 12.04 2zM17.5 14.3c-.2-.1-.8-.4-1-.4s-.3-.1-.5.3-.6.7-.8.8-.3.1-.6.1-.9-.3-1.1-.6-.8-.7-.9-1-.2-.4 0-.4s.2-.4.4-.6c.2-.2.4-.5.5-.7s.2-.4.1-.6-.2-.4-.3-.5c-.1-.1-.3-.2-.4-.3s-.3-.2-.5-.2h-.4c-.2 0-.5.1-.7.4-.2.2-.8.8-.8.9s-.1.2-.2.3c-.1.2-.2.4-.2.5s.1.2.2.3c.1.1.2.3.4.4s.3.2.5.3c.2.1.4.1.6.1s.4 0 .5-.1c.2-.1.8-.4 1-.6s.4-.4.5-.6c.1-.2.2-.4.2-.6s0-.4-.1-.5z" /></svg>
-                        Solicitar Precio Ahora
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <h1 class="text-3xl md:text-5xl font-display font-black text-white mb-4">
+        Calentadores <span class="text-thor-gold">Solares</span>
+      </h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+        Olvídate del gas. Agua caliente garantizada para todo tipo de presión hidráulica.
+      </p>
     </div>
+  </header>
 
-    <script>
-        // --- DATA DE CALENTADORES ---
-        const products = [
-            // GRAVEDAD (Residencial Estándar)
-            { 
-                id: 1, 
-                name: "Gravedad 10 Tubos", 
-                category: "Gravedad",
-                description: "El modelo de entrada perfecto para parejas o familias pequeñas. Tanque de acero inoxidable grado alimenticio que mantiene el agua caliente hasta por 72 horas. Requiere tinaco a una altura mínima de 1 metro.",
-                short: "Capacidad: 130 Litros (2-3 Personas)",
-                specs: "130L Total / Acero Inox SUS304-2B / Estructura Acero Galvanizado",
-                image: "https://placehold.co/600x600/0f172a/fbbf24?text=10+Tubos+Gravedad" 
-            },
-            { 
-                id: 2, 
-                name: "Gravedad 12 Tubos", 
-                category: "Gravedad",
-                description: "Nuestro 'Best Seller'. Ideal para la familia mexicana promedio. Recuperación rápida de calor gracias a sus tubos de borosilicato tricapa de cuarta generación. Garantía de 5 años por escrito.",
-                short: "Capacidad: 150 Litros (3-4 Personas)",
-                specs: "150L Total / Tubos Tricapa / Vida útil +20 años",
-                image: "https://placehold.co/600x600/0f172a/fbbf24?text=12+Tubos+Gravedad" 
-            },
-            { 
-                id: 3, 
-                name: "Gravedad 15 Tubos", 
-                category: "Gravedad",
-                description: "Para familias numerosas que no quieren preocuparse por el agua caliente. Gran capacidad de almacenamiento térmico. Incluye barra de magnesio para evitar el sarro.",
-                short: "Capacidad: 173 Litros (4-5 Personas)",
-                specs: "173L Total / Reflectores incluidos / Ahorro del 80% Gas",
-                image: "https://placehold.co/600x600/0f172a/fbbf24?text=15+Tubos+Gravedad" 
-            },
-            { 
-                id: 4, 
-                name: "Gravedad 20 Tubos", 
-                category: "Gravedad",
-                description: "La solución residencial más grande. Ideal si tienes jacuzzi o regaderas de alto flujo (siempre que se alimenten por gravedad). Soporta condiciones climáticas adversas.",
-                short: "Capacidad: 240 Litros (6-7 Personas)",
-                specs: "240L Total / Estructura Reforzada / Alta Eficiencia",
-                image: "https://placehold.co/600x600/0f172a/fbbf24?text=20+Tubos+Gravedad" 
-            },
+  <div class="bg-white border-b border-gray-200 sticky top-[85px] z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="filter-container"
+        class="flex space-x-4 overflow-x-auto py-4 no-scrollbar items-center justify-start md:justify-center">
+        <button onclick="filterSelection('all')" class="filter-btn active whitespace-nowrap cursor-pointer">Ver
+          Todos</button>
+        <button onclick="filterSelection('Gravedad')" class="filter-btn whitespace-nowrap cursor-pointer">Gravedad
+          (Tinaco)</button>
+        <button onclick="filterSelection('Presurizado')" class="filter-btn whitespace-nowrap cursor-pointer">Alta
+          Presión</button>
+        <button onclick="filterSelection('Industrial')"
+          class="filter-btn whitespace-nowrap cursor-pointer">Industriales</button>
+        <button onclick="filterSelection('Refacciones')"
+          class="filter-btn whitespace-nowrap cursor-pointer">Refacciones</button>
+      </div>
+    </div>
+  </div>
 
-            // PRESURIZADOS (Alta Presión / Hidroneumático)
-            { 
-                id: 5, 
-                name: "Heat Pipe 150L", 
-                category: "Presurizado",
-                description: "Tecnología de punta sin agua en los tubos. Usa pipetas de cobre superconductoras. Si se rompe un tubo, el equipo NO tira agua y sigue funcionando. Soporta presión de hidroneumático.",
-                short: "Tecnología Heat Pipe (Alta Presión)",
-                specs: "150L / Pipeta de Cobre / Soporta hasta 6kg de presión",
-                image: "https://placehold.co/600x600/1e3a8a/06b6d4?text=Heat+Pipe+150L" 
-            },
-            { 
-                id: 6, 
-                name: "Heat Pipe 200L", 
-                category: "Presurizado",
-                description: "El hermano mayor de la línea Heat Pipe. Máximo confort para hogares modernos con sistemas de alta presión. Calienta el agua en tiempo récord.",
-                short: "Tecnología Heat Pipe (5-6 Personas)",
-                specs: "200L / Cero Fugas / Acero Inox SUS304",
-                image: "https://placehold.co/600x600/1e3a8a/06b6d4?text=Heat+Pipe+200L" 
-            },
+  <main class="flex-grow py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      </div>
+      <div id="no-products" class="hidden text-center py-20 text-gray-500">
+        <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p class="text-xl">No hay productos en esta categoría por el momento.</p>
+      </div>
+    </div>
+  </main>
 
-            // INDUSTRIAL
-            { 
-                id: 7, 
-                name: "Módulo Industrial 500L", 
-                category: "Industrial",
-                description: "Para hoteles, gimnasios o procesos industriales. Sistema modular interconectable tipo Manifold. Permite calentar grandes volúmenes de agua reduciendo drásticamente los costos operativos.",
-                short: "Proyecto Industrial / Manifold",
-                specs: "50 Tubos / Colector 500L / Interconectable",
-                image: "https://placehold.co/600x600/333333/ffffff?text=Industrial+500L" 
-            },
+  <section class="bg-gray-200 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-6 md:mb-0">
+        <h3 class="text-2xl font-display font-bold text-thor-dark">¿Dudas con la presión de tu agua?</h3>
+        <p class="text-gray-600">Si tienes hidroneumático necesitas un equipo especial. ¡Pregúntanos!</p>
+      </div>
+      <a href="https://wa.me/525584122228?text=Hola,%20tengo%20dudas%20sobre%20qué%20calentador%20necesito."
+        target="_blank"
+        class="px-8 py-3 bg-thor-dark text-white font-bold rounded-xl hover:bg-thor-blue transition shadow-lg flex items-center">
+        <svg class="w-5 h-5 mr-2 text-thor-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+          </path>
+        </svg>
+        Hablar con un Técnico
+      </a>
+    </div>
+  </section>
 
-            // REFACCIONES
-            { 
-                id: 8, 
-                name: "Tubo Tricapa Borosilicato", 
-                category: "Refacciones",
-                description: "Repuesto original de tubo al vacío. Tecnología tricapa (Cobre, Acero, Aluminio) para máxima absorción de radiación. Resistente al granizo de hasta 25mm.",
-                short: "Repuesto Universal 1800mm x 58mm",
-                specs: "Medida Estándar / Resistente a granizo",
-                image: "https://placehold.co/600x600/eeeeee/333333?text=Tubo+Repuesto" 
-            },
-            { 
-                id: 9, 
-                name: "Barra de Magnesio", 
-                category: "Refacciones",
-                description: "Elemento vital para tu calentador. Atrapa las sales minerales del agua evitando que se peguen al tanque y lo corroan. Se recomienda cambiar cada año.",
-                short: "Protección anti-sarro",
-                specs: "Ánodo de sacrificio / Indispensable mantenimiento",
-                image: "https://placehold.co/600x600/eeeeee/333333?text=Barra+Magnesio" 
-            }
-        ];
+  <footer class="bg-thor-dark text-white pt-12 pb-6 border-t border-gray-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      <div class="mb-4 flex items-center">
+        <span class="text-3xl font-display font-black tracking-widest">THOR<span
+            class="text-thor-gold">SOLAR</span></span>
+      </div>
+      <p class="text-gray-500 text-sm text-center">&copy; 2025 ThorSolar. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-        // --- LOGICA DE RENDERIZADO Y FILTRO ---
-        const productGrid = document.getElementById('product-grid');
-        const noProductsMsg = document.getElementById('no-products');
-        
-        function renderProducts(productsList = products) {
-            productGrid.innerHTML = ""; 
+  <div id="product-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-thor-dark/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+    <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
+      <div
+        class="relative bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-3xl w-full flex flex-col md:flex-row">
 
-            if (productsList.length === 0) {
-                noProductsMsg.classList.remove('hidden');
-            } else {
-                noProductsMsg.classList.add('hidden');
-                productGrid.innerHTML = productsList.map(product => `
+        <div class="md:w-1/2 h-64 md:h-auto bg-gray-100 relative">
+          <img id="modal-product-image" src="" alt="" class="w-full h-full object-cover">
+          <div
+            class="absolute top-4 right-4 md:left-4 md:right-auto bg-white/20 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-white/40 transition md:hidden"
+            onclick="closeModal()">
+            <svg class="h-6 w-6 text-thor-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="md:w-1/2 p-8 md:p-10 flex flex-col">
+          <div class="flex justify-between items-start">
+            <span id="modal-product-category"
+              class="text-xs font-bold text-thor-gold uppercase tracking-wider mb-2 block">Categoría</span>
+            <button onclick="closeModal()" class="hidden md:block text-gray-400 hover:text-thor-dark">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <h3 id="modal-product-name" class="text-3xl font-display font-black text-thor-dark mb-4 leading-tight">Nombre
+          </h3>
+          <p id="modal-product-description" class="text-gray-600 mb-6 leading-relaxed flex-grow">Descripción</p>
+
+          <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 mb-6">
+            <p class="text-sm font-bold text-thor-blue mb-1">Especificaciones clave:</p>
+            <p id="modal-product-specs" class="text-sm text-gray-500">Material, capacidad, etc.</p>
+          </div>
+
+          <a id="modal-whatsapp-link" href="#" target="_blank"
+            class="block w-full text-center py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-2">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12.04 2C6.544 2 2.02 6.49 2.01 11.96c0 1.765.46 3.456 1.32 4.954L2 22l5.244-1.378a9.927 9.927 0 004.814 1.259c5.504 0 9.98-4.502 9.99-10.006C22.04 6.49 17.564 2 12.04 2zM17.5 14.3c-.2-.1-.8-.4-1-.4s-.3-.1-.5.3-.6.7-.8.8-.3.1-.6.1-.9-.3-1.1-.6-.8-.7-.9-1-.2-.4 0-.4s.2-.4.4-.6c.2-.2.4-.5.5-.7s.2-.4.1-.6-.2-.4-.3-.5c-.1-.1-.3-.2-.4-.3s-.3-.2-.5-.2h-.4c-.2 0-.5.1-.7.4-.2.2-.8.8-.8.9s-.1.2-.2.3c-.1.2-.2.4-.2.5s.1.2.2.3c.1.1.2.3.4.4s.3.2.5.3c.2.1.4.1.6.1s.4 0 .5-.1c.2-.1.8-.4 1-.6s.4-.4.5-.6c.1-.2.2-.4.2-.6s0-.4-.1-.5z" />
+            </svg>
+            Solicitar Precio Ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- DATA DE CALENTADORES ---
+    const products = [
+      // GRAVEDAD (Residencial Estándar)
+      {
+        id: 1,
+        name: "Gravedad 10 Tubos",
+        category: "Gravedad",
+        description: "El modelo de entrada perfecto para parejas o familias pequeñas. Tanque de acero inoxidable grado alimenticio que mantiene el agua caliente hasta por 72 horas. Requiere tinaco a una altura mínima de 1 metro.",
+        short: "Capacidad: 130 Litros (2-3 Personas)",
+        specs: "130L Total / Acero Inox SUS304-2B / Estructura Acero Galvanizado",
+        image: "https://placehold.co/600x600/0f172a/fbbf24?text=10+Tubos+Gravedad"
+      },
+      {
+        id: 2,
+        name: "Gravedad 12 Tubos",
+        category: "Gravedad",
+        description: "Nuestro 'Best Seller'. Ideal para la familia mexicana promedio. Recuperación rápida de calor gracias a sus tubos de borosilicato tricapa de cuarta generación. Garantía de 5 años por escrito.",
+        short: "Capacidad: 150 Litros (3-4 Personas)",
+        specs: "150L Total / Tubos Tricapa / Vida útil +20 años",
+        image: "https://placehold.co/600x600/0f172a/fbbf24?text=12+Tubos+Gravedad"
+      },
+      {
+        id: 3,
+        name: "Gravedad 15 Tubos",
+        category: "Gravedad",
+        description: "Para familias numerosas que no quieren preocuparse por el agua caliente. Gran capacidad de almacenamiento térmico. Incluye barra de magnesio para evitar el sarro.",
+        short: "Capacidad: 173 Litros (4-5 Personas)",
+        specs: "173L Total / Reflectores incluidos / Ahorro del 80% Gas",
+        image: "https://placehold.co/600x600/0f172a/fbbf24?text=15+Tubos+Gravedad"
+      },
+      {
+        id: 4,
+        name: "Gravedad 20 Tubos",
+        category: "Gravedad",
+        description: "La solución residencial más grande. Ideal si tienes jacuzzi o regaderas de alto flujo (siempre que se alimenten por gravedad). Soporta condiciones climáticas adversas.",
+        short: "Capacidad: 240 Litros (6-7 Personas)",
+        specs: "240L Total / Estructura Reforzada / Alta Eficiencia",
+        image: "https://placehold.co/600x600/0f172a/fbbf24?text=20+Tubos+Gravedad"
+      },
+
+      // PRESURIZADOS (Alta Presión / Hidroneumático)
+      {
+        id: 5,
+        name: "Heat Pipe 150L",
+        category: "Presurizado",
+        description: "Tecnología de punta sin agua en los tubos. Usa pipetas de cobre superconductoras. Si se rompe un tubo, el equipo NO tira agua y sigue funcionando. Soporta presión de hidroneumático.",
+        short: "Tecnología Heat Pipe (Alta Presión)",
+        specs: "150L / Pipeta de Cobre / Soporta hasta 6kg de presión",
+        image: "https://placehold.co/600x600/1e3a8a/06b6d4?text=Heat+Pipe+150L"
+      },
+      {
+        id: 6,
+        name: "Heat Pipe 200L",
+        category: "Presurizado",
+        description: "El hermano mayor de la línea Heat Pipe. Máximo confort para hogares modernos con sistemas de alta presión. Calienta el agua en tiempo récord.",
+        short: "Tecnología Heat Pipe (5-6 Personas)",
+        specs: "200L / Cero Fugas / Acero Inox SUS304",
+        image: "https://placehold.co/600x600/1e3a8a/06b6d4?text=Heat+Pipe+200L"
+      },
+
+      // INDUSTRIAL
+      {
+        id: 7,
+        name: "Módulo Industrial 500L",
+        category: "Industrial",
+        description: "Para hoteles, gimnasios o procesos industriales. Sistema modular interconectable tipo Manifold. Permite calentar grandes volúmenes de agua reduciendo drásticamente los costos operativos.",
+        short: "Proyecto Industrial / Manifold",
+        specs: "50 Tubos / Colector 500L / Interconectable",
+        image: "https://placehold.co/600x600/333333/ffffff?text=Industrial+500L"
+      },
+
+      // REFACCIONES
+      {
+        id: 8,
+        name: "Tubo Tricapa Borosilicato",
+        category: "Refacciones",
+        description: "Repuesto original de tubo al vacío. Tecnología tricapa (Cobre, Acero, Aluminio) para máxima absorción de radiación. Resistente al granizo de hasta 25mm.",
+        short: "Repuesto Universal 1800mm x 58mm",
+        specs: "Medida Estándar / Resistente a granizo",
+        image: "https://placehold.co/600x600/eeeeee/333333?text=Tubo+Repuesto"
+      },
+      {
+        id: 9,
+        name: "Barra de Magnesio",
+        category: "Refacciones",
+        description: "Elemento vital para tu calentador. Atrapa las sales minerales del agua evitando que se peguen al tanque y lo corroan. Se recomienda cambiar cada año.",
+        short: "Protección anti-sarro",
+        specs: "Ánodo de sacrificio / Indispensable mantenimiento",
+        image: "https://placehold.co/600x600/eeeeee/333333?text=Barra+Magnesio"
+      }
+    ];
+
+    // --- LOGICA DE RENDERIZADO Y FILTRO ---
+    const productGrid = document.getElementById('product-grid');
+    const noProductsMsg = document.getElementById('no-products');
+
+    function renderProducts(productsList = products) {
+      productGrid.innerHTML = "";
+
+      if (productsList.length === 0) {
+        noProductsMsg.classList.remove('hidden');
+      } else {
+        noProductsMsg.classList.add('hidden');
+        productGrid.innerHTML = productsList.map(product => `
                     <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col h-full cursor-pointer group" onclick="openModal(${product.id})">
                         <div class="h-64 overflow-hidden relative bg-gray-100">
                              <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
@@ -399,68 +463,69 @@
                         </div>
                     </div>
                 `).join('');
-            }
-        }
+      }
+    }
 
-        function filterSelection(category) {
-            let filteredProducts;
-            if (category === 'all') {
-                filteredProducts = products;
-            } else {
-                filteredProducts = products.filter(p => p.category === category);
-            }
-            renderProducts(filteredProducts);
+    function filterSelection(category) {
+      let filteredProducts;
+      if (category === 'all') {
+        filteredProducts = products;
+      } else {
+        filteredProducts = products.filter(p => p.category === category);
+      }
+      renderProducts(filteredProducts);
 
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-        }
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
 
-        // --- MENU MÓVIL ---
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    // --- MENU MÓVIL ---
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // --- MODAL ---
-        const modal = document.getElementById('product-modal');
-        const mImage = document.getElementById('modal-product-image');
-        const mName = document.getElementById('modal-product-name');
-        const mCat = document.getElementById('modal-product-category');
-        const mDesc = document.getElementById('modal-product-description');
-        const mSpecs = document.getElementById('modal-product-specs');
-        const mLink = document.getElementById('modal-whatsapp-link');
+    // --- MODAL ---
+    const modal = document.getElementById('product-modal');
+    const mImage = document.getElementById('modal-product-image');
+    const mName = document.getElementById('modal-product-name');
+    const mCat = document.getElementById('modal-product-category');
+    const mDesc = document.getElementById('modal-product-description');
+    const mSpecs = document.getElementById('modal-product-specs');
+    const mLink = document.getElementById('modal-whatsapp-link');
 
-        function openModal(id) {
-            const prod = products.find(p => p.id === id);
-            if(!prod) return;
-            
-            mImage.src = prod.image;
-            mName.textContent = prod.name;
-            mCat.textContent = prod.category;
-            mDesc.textContent = prod.description;
-            mSpecs.textContent = prod.specs;
-            
-            const text = `Hola ThorSolar, me interesa cotizar el modelo: ${prod.name} (${prod.category})`;
-            mLink.href = `https://wa.me/525584122228?text=${encodeURIComponent(text)}`;
-            
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+    function openModal(id) {
+      const prod = products.find(p => p.id === id);
+      if (!prod) return;
 
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+      mImage.src = prod.image;
+      mName.textContent = prod.name;
+      mCat.textContent = prod.category;
+      mDesc.textContent = prod.description;
+      mSpecs.textContent = prod.specs;
 
-        // Click outside modal
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
+      const text = `Hola ThorSolar, me interesa cotizar el modelo: ${prod.name} (${prod.category})`;
+      mLink.href = `https://wa.me/525584122228?text=${encodeURIComponent(text)}`;
 
-        // Inicializar
-        renderProducts();
-    </script>
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Click outside modal
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+
+    // Inicializar
+    renderProducts();
+  </script>
 </body>
+
 </html>

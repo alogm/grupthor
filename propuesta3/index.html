@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ThorSolar - Energía Legendaria</title>
+  <title>ThorSolar - El calor de hogar</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -70,15 +70,15 @@
         border-bottom: 2px solid transparent;
         opacity: 0.6;
     }
-    /* Estilos específicos para tabs en fondo claro */
-    .calc-tab.light-mode {
-        color: #4b5563; /* gray-600 */
-        border-color: transparent;
+    /* Estilos para tabs en fondo oscuro (Calculadora) */
+    .calc-tab.dark-mode {
+        color: white;
+        border-color: rgba(255,255,255,0.2);
     }
-    .calc-tab.light-mode.active {
+    .calc-tab.dark-mode.active {
         opacity: 1;
-        color: #d97706; /* goldDark */
-        border-color: #d97706;
+        border-color: #fbbf24; /* Gold */
+        color: #fbbf24;
         background-color: rgba(251, 191, 36, 0.1);
     }
 
@@ -91,7 +91,7 @@
     }
     .app-card:hover {
         transform: scale(1.02);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
     .app-overlay {
         background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
@@ -186,8 +186,8 @@
   </nav>
 
   <main>
-    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-thor-dark min-h-screen flex items-center">
-      <div class="absolute inset-0 opacity-20">
+    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gray-50 min-h-screen flex items-center">
+      <div class="absolute inset-0 opacity-5">
         <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <path d="M0 100 L100 0 L100 100 Z" fill="#1e3a8a" />
         </svg>
@@ -195,36 +195,36 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-display font-black text-white mb-6 leading-tight">
-            Energía <span class="text-transparent bg-clip-text bg-gradient-to-r from-thor-cyan to-blue-400">Legendaria</span><br />
-            Ahorro <span class="text-transparent bg-clip-text bg-gradient-to-r from-thor-gold to-yellow-300">Divino</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-thor-dark mb-6 leading-tight">
+            El <span class="text-transparent bg-clip-text bg-gradient-to-r from-thor-goldDark to-thor-gold">calor de hogar</span><br />
+            que tu familia merece.
           </h1>
-          <p class="mt-4 text-xl text-gray-300 font-light leading-relaxed">
-            Olvídate del gas y transforma la energía del sol en agua caliente para tu hogar con la fuerza de ThorSolar.
+          <p class="mt-4 text-xl text-gray-600 font-medium leading-relaxed">
+            Olvídate de gastar en gas. Disfruta de agua caliente y electricidad gratis gracias al sol.
           </p>
           <div class="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <a href="#calentadores" class="px-8 py-4 rounded-xl bg-thor-gold hover:bg-yellow-400 text-thor-dark font-bold text-lg shadow-[0_0_20px_rgba(251,191,36,0.4)] transition transform hover:scale-105 text-center">Ver Productos</a>
-            <a href="contacto.html" class="px-8 py-4 rounded-xl border-2 border-thor-cyan text-thor-cyan font-bold text-lg hover:bg-thor-cyan hover:text-thor-dark transition duration-300 text-center">Contáctanos</a>
+            <a href="./productos.html" class="px-8 py-4 rounded-xl bg-thor-gold hover:bg-yellow-400 text-thor-dark font-bold text-lg shadow-xl shadow-yellow-200 transition transform hover:scale-105 text-center">Ver Productos</a>
+            <a href="contacto.html" class="px-8 py-4 rounded-xl border-2 border-thor-cyan text-thor-cyan font-bold text-lg hover:bg-thor-cyan hover:text-white transition duration-300 text-center">Contáctanos</a>
           </div>
         </div>
 
         <div class="relative group">
           <div class="absolute -inset-1 bg-gradient-to-r from-thor-gold to-thor-cyan rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
-          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-thor-dark">
-            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Instalación Solar" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700" />
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Familia feliz" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-20 bg-gray-100">
+    <section class="py-20 bg-thor-dark border-t border-gray-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-display font-bold text-thor-dark mb-4">
-            ¿Qué proyecto quieres energizar?
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
+            "Soluciones para cada Espacio"
           </h2>
           <div class="w-24 h-1 bg-thor-gold mx-auto rounded-full"></div>
-          <p class="mt-4 text-gray-600 font-medium">Selecciona tu espacio y encuentra la solución ideal.</p>
+          <p class="mt-4 text-gray-400">Selecciona tu espacio y encuentra la solución ideal.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -247,7 +247,7 @@
             </div>
 
             <div class="app-card relative h-64 group" onclick="window.location.href='./productos/celdas.html'">
-                <img src="https://images.unsplash.com/photo-1565514020126-258079fb79b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Industrial" class="w-full h-full object-cover">
+                <img src="../imagen/industry.jpg" alt="Industrial" class="w-full h-full object-cover">
                 <div class="app-overlay absolute inset-0 flex flex-col justify-center items-center text-center p-4">
                     <h3 class="text-3xl font-bold text-white mb-4 drop-shadow-md">Industrial</h3>
                     <p class="text-gray-200 text-sm mb-4 opacity-0 group-hover:opacity-100 transition duration-300">Alto consumo y procesos</p>
@@ -276,34 +276,31 @@
       </div>
     </section>
 
-    <section class="bg-thor-dark py-24 relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-96 h-96 bg-thor-blue opacity-10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-thor-gold opacity-10 blur-3xl rounded-full -translate-x-1/2 translate-y-1/2"></div>
-
+    <section class="bg-white py-24 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-20">
-          <h2 class="text-3xl sm:text-5xl font-display font-black text-white mb-4">El Arsenal de <span class="text-thor-gold">ThorSolar</span></h2>
+          <h2 class="text-3xl sm:text-5xl font-display font-black text-thor-dark mb-4">El Arsenal de <span class="text-thor-gold">ThorSolar</span></h2>
           <div class="w-24 h-1 bg-gradient-to-r from-thor-gold to-thor-cyan mx-auto rounded-full"></div>
-          <p class="mt-4 text-gray-400 text-lg">Tecnología divina para la independencia energética.</p>
+          <p class="mt-4 text-gray-600 text-lg">Tecnología para la independencia energética.</p>
         </div>
 
         <div id="calentadores" class="flex flex-col md:flex-row items-center gap-12 mb-24">
           <div class="md:w-1/2 order-2 md:order-1">
-            <h3 class="text-3xl font-display font-bold text-white mb-4 flex items-center gap-3">
+            <h3 class="text-3xl font-display font-bold text-thor-dark mb-4 flex items-center gap-3">
               <span class="w-2 h-8 bg-thor-gold rounded-full"></span>Calentadores Solares
             </h3>
-            <p class="text-gray-300 text-lg mb-6 leading-relaxed">Aprovecha el calor del sol para tener agua caliente las 24 horas. Contamos con tecnología de <span class="text-thor-gold font-bold">Gravedad</span> y <span class="text-thor-gold font-bold">Presurizados</span>.</p>
-            <ul class="space-y-3 mb-8 text-gray-400">
+            <p class="text-gray-600 text-lg mb-6 leading-relaxed">Aprovecha el calor del sol para tener agua caliente las 24 horas. Contamos con tecnología de <span class="text-thor-gold font-bold">Gravedad</span> y <span class="text-thor-gold font-bold">Presurizados</span>.</p>
+            <ul class="space-y-3 mb-8 text-gray-500">
               <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ahorra hasta 80% en Gas</li>
               <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Acero Inoxidable Grado Alimenticio</li>
               <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Vida útil de +20 años</li>
             </ul>
-            <a href="./productos/calentadores.html" class="inline-block px-8 py-3 bg-white/10 hover:bg-thor-gold hover:text-thor-dark text-white border border-thor-gold/50 rounded-lg transition duration-300 font-bold">Ver Modelos</a>
+            <a href="./productos/calentadores.html" class="inline-block px-8 py-3 bg-thor-dark hover:bg-thor-gold hover:text-thor-dark text-white rounded-lg transition duration-300 font-bold">Ver Modelos</a>
           </div>
           <div class="md:w-1/2 order-1 md:order-2 product-container">
-            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-thor-gold/30">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-              <img src="/imagen/img2.jpg" alt="Calentador Solar ThorSolar" class="w-full h-80 md:h-[400px] object-cover product-img">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-100">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+              <img src="/imagen/calentador.jpg" alt="Calentador Solar ThorSolar" class="w-full h-80 md:h-[400px] object-cover product-img">
               <div class="absolute bottom-4 left-4 z-20"><span class="bg-thor-gold text-thor-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Más Vendido</span></div>
             </div>
           </div>
@@ -311,42 +308,42 @@
 
         <div id="celdas" class="flex flex-col md:flex-row items-center gap-12 mb-24">
           <div class="md:w-1/2 product-container">
-            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-thor-cyan/30">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-100">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
               <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Paneles Solares ThorSolar" class="w-full h-80 md:h-[400px] object-cover product-img">
               <div class="absolute bottom-4 left-4 z-20"><span class="bg-thor-cyan text-thor-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Alta Eficiencia</span></div>
             </div>
           </div>
           <div class="md:w-1/2">
-            <h3 class="text-3xl font-display font-bold text-white mb-4 flex items-center gap-3">
+            <h3 class="text-3xl font-display font-bold text-thor-dark mb-4 flex items-center gap-3">
               <span class="w-2 h-8 bg-thor-cyan rounded-full"></span>Celdas Fotovoltaicas
             </h3>
-            <p class="text-gray-300 text-lg mb-6 leading-relaxed">Convierte tu techo en una central eléctrica. <span class="text-thor-cyan font-bold">Congela el precio de tu luz</span> por los próximos 25 años.</p>
-            <ul class="space-y-3 mb-8 text-gray-400">
+            <p class="text-gray-600 text-lg mb-6 leading-relaxed">Convierte tu techo en una central eléctrica. <span class="text-thor-cyan font-bold">Congela el precio de tu luz</span> por los próximos 25 años.</p>
+            <ul class="space-y-3 mb-8 text-gray-500">
               <li class="flex items-center gap-2"><svg class="w-5 h-5 text-thor-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>Retorno de Inversión Rápido</li>
               <li class="flex items-center gap-2"><svg class="w-5 h-5 text-thor-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>Monitoreo vía App Móvil</li>
               <li class="flex items-center gap-2"><svg class="w-5 h-5 text-thor-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>Paneles Monocristalinos Tier 1</li>
             </ul>
-            <a href="./productos/celdas.html" class="inline-block px-8 py-3 bg-white/10 hover:bg-thor-cyan hover:text-thor-dark text-white border border-thor-cyan/50 rounded-lg transition duration-300 font-bold">Calcular mi Proyecto</a>
+            <a href="./productos/celdas.html" class="inline-block px-8 py-3 bg-thor-dark hover:bg-thor-cyan hover:text-thor-dark text-white rounded-lg transition duration-300 font-bold">Calcular mi Proyecto</a>
           </div>
         </div>
 
         <div id="luminarias" class="flex flex-col md:flex-row items-center gap-12">
           <div class="md:w-1/2 order-2 md:order-1">
-            <h3 class="text-3xl font-display font-bold text-white mb-4 flex items-center gap-3">
-              <span class="w-2 h-8 bg-white rounded-full"></span>Luminarias Autónomas
+            <h3 class="text-3xl font-display font-bold text-thor-dark mb-4 flex items-center gap-3">
+              <span class="w-2 h-8 bg-gray-400 rounded-full"></span>Luminarias Autónomas
             </h3>
-            <p class="text-gray-300 text-lg mb-6 leading-relaxed">Iluminación potente para calles, jardines y patios sin necesidad de cableado. Seguridad y ahorro en un solo equipo.</p>
+            <p class="text-gray-600 text-lg mb-6 leading-relaxed">Iluminación potente para calles, jardines y patios sin necesidad de cableado. Seguridad y ahorro en un solo equipo.</p>
             <div class="grid grid-cols-2 gap-4 mb-8">
-              <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center"><span class="block text-2xl font-bold text-white">IP65</span><span class="text-xs text-gray-400">Resistente a Lluvia</span></div>
-              <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-center"><span class="block text-2xl font-bold text-white">LED</span><span class="text-xs text-gray-400">Alto Brillo</span></div>
+              <div class="bg-gray-200 p-4 rounded-lg border border-gray-200 text-center"><span class="block text-2xl font-bold text-thor-dark">IP65</span><span class="text-xs text-gray-500">Resistente a Lluvia</span></div>
+              <div class="bg-gray-200 p-4 rounded-lg border border-gray-200 text-center"><span class="block text-2xl font-bold text-thor-dark">LED</span><span class="text-xs text-gray-500">Alto Brillo</span></div>
             </div>
-            <a href="./productos/luminarias.html" class="inline-block px-8 py-3 bg-white/10 hover:bg-white hover:text-thor-dark text-white border border-white/50 rounded-lg transition duration-300 font-bold">Ver Catálogo</a>
+            <a href="./productos/luminarias.html" class="inline-block px-8 py-3 bg-thor-dark hover:bg-gray-700 text-white rounded-lg transition duration-300 font-bold">Ver Catálogo</a>
           </div>
           <div class="md:w-1/2 order-1 md:order-2 product-container">
-            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/30">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-              <img src="/imagen/luminaria.jpeg" alt="Luminarias Solares" class="w-full h-80 md:h-[400px] object-cover product-img">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-100">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+              <img src="/imagen/lumy.jpg" alt="Luminarias Solares" class="w-full h-80 md:h-[400px] object-cover product-img">
               <div class="absolute bottom-4 left-4 z-20"><span class="bg-white text-thor-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Cero Cables</span></div>
             </div>
           </div>
@@ -354,64 +351,67 @@
       </div>
     </section>
 
-    <section class="py-20 bg-gray-200 border-t border-b border-gray-200 relative overflow-hidden">
+    <section class="py-20 bg-gradient-to-b from-thor-dark to-gray-900 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-64 h-64 bg-thor-blue rounded-full filter blur-[100px] opacity-20"></div>
+      <div class="absolute bottom-0 right-0 w-64 h-64 bg-thor-gold rounded-full filter blur-[100px] opacity-10"></div>
+
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-8">
-          <h2 class="text-3xl md:text-4xl font-display font-black text-thor-dark mb-4">Calculadora de <span class="text-thor-gold">Ahorro</span></h2>
-          <p class="text-gray-600 text-lg">Descubre cuánto dinero recuperarás invirtiendo en energía solar.</p>
+          <h2 class="text-3xl md:text-4xl font-display font-black text-white mb-4">Calculadora de <span class="text-thor-gold">Ahorro</span></h2>
+          <p class="text-gray-400 text-lg">Descubre cuánto dinero recuperarás invirtiendo en energía solar.</p>
         </div>
 
         <div class="flex justify-center mb-8 gap-4 flex-wrap">
-            <button onclick="switchTab('heaters')" id="tab-heaters" class="calc-tab light-mode active font-bold py-2 px-6 rounded-full border border-gray-300 uppercase text-sm tracking-wider">Calentadores</button>
-            <button onclick="switchTab('panels')" id="tab-panels" class="calc-tab light-mode font-bold py-2 px-6 rounded-full border border-gray-300 uppercase text-sm tracking-wider">Paneles CFE</button>
-            <button onclick="switchTab('lights')" id="tab-lights" class="calc-tab light-mode font-bold py-2 px-6 rounded-full border border-gray-300 uppercase text-sm tracking-wider">Luminarias</button>
+            <button onclick="switchTab('heaters')" id="tab-heaters" class="calc-tab dark-mode active font-bold py-2 px-6 rounded-full border uppercase text-sm tracking-wider">Calentadores</button>
+            <button onclick="switchTab('panels')" id="tab-panels" class="calc-tab dark-mode font-bold py-2 px-6 rounded-full border uppercase text-sm tracking-wider">Paneles CFE</button>
+            <button onclick="switchTab('lights')" id="tab-lights" class="calc-tab dark-mode font-bold py-2 px-6 rounded-full border uppercase text-sm tracking-wider">Luminarias</button>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200 grid lg:grid-cols-2 gap-12 items-center min-h-[500px]">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl grid lg:grid-cols-2 gap-12 items-center min-h-[500px]">
           <div class="space-y-8">
             <div id="calc-heaters" class="calc-content block animation-fade">
                 <div>
-                  <label class="block text-gray-700 font-bold mb-4 text-lg">¿Cuánto gastas de Gas al mes?</label>
+                  <label class="block text-gray-300 font-bold mb-4 text-lg">¿Cuánto gastas de Gas al mes?</label>
                   <div class="flex items-center gap-4 mb-4">
                     <span class="text-2xl text-thor-gold font-bold">$</span>
-                    <input type="number" id="gasInput" value="800" min="0" step="50" class="w-full bg-transparent border-b-2 border-gray-300 text-3xl text-gray-800 font-bold focus:outline-none focus:border-thor-gold transition p-2" oninput="calculateHeaters()" />
+                    <input type="number" id="gasInput" value="800" min="0" step="50" class="w-full bg-transparent border-b-2 border-gray-600 text-3xl text-white font-bold focus:outline-none focus:border-thor-gold transition p-2" oninput="calculateHeaters()" />
                   </div>
-                  <input type="range" id="gasRange" min="200" max="5000" step="50" value="800" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-thor-gold" oninput="document.getElementById('gasInput').value=this.value; calculateHeaters();" />
+                  <input type="range" id="gasRange" min="200" max="5000" step="50" value="800" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-thor-gold" oninput="document.getElementById('gasInput').value=this.value; calculateHeaters();" />
                 </div>
                 <div class="mt-8">
-                  <label class="block text-gray-700 font-bold mb-4 text-lg">Personas en casa:</label>
+                  <label class="block text-gray-300 font-bold mb-4 text-lg">Personas en casa:</label>
                   <div class="grid grid-cols-3 gap-4">
-                    <button onclick="setPeople(3)" class="people-btn active p-3 rounded-xl border border-thor-gold bg-thor-gold text-white font-bold shadow-md" data-val="3">1 - 4</button>
-                    <button onclick="setPeople(6)" class="people-btn p-3 rounded-xl border border-gray-300 text-gray-500 bg-gray-50 font-bold hover:border-thor-gold hover:text-thor-gold transition" data-val="6">5 - 7</button>
-                    <button onclick="setPeople(9)" class="people-btn p-3 rounded-xl border border-gray-300 text-gray-500 bg-gray-50 font-bold hover:border-thor-gold hover:text-thor-gold transition" data-val="9">8+</button>
+                    <button onclick="setPeople(3)" class="people-btn active p-3 rounded-xl border border-gray-600 bg-thor-gold text-thor-dark font-bold" data-val="3">1 - 4</button>
+                    <button onclick="setPeople(6)" class="people-btn p-3 rounded-xl border border-gray-600 text-gray-300 bg-white/5 font-bold" data-val="6">5 - 7</button>
+                    <button onclick="setPeople(9)" class="people-btn p-3 rounded-xl border border-gray-600 text-gray-300 bg-white/5 font-bold" data-val="9">8+</button>
                   </div>
                 </div>
             </div>
 
             <div id="calc-panels" class="calc-content hidden animation-fade">
                 <div>
-                  <label class="block text-gray-700 font-bold mb-4 text-lg">¿De cuánto llega tu Recibo de Luz (Bimestral)?</label>
+                  <label class="block text-gray-300 font-bold mb-4 text-lg">¿De cuánto llega tu Recibo de Luz (Bimestral)?</label>
                   <div class="flex items-center gap-4 mb-4">
                     <span class="text-2xl text-thor-cyan font-bold">$</span>
-                    <input type="number" id="billInput" value="2500" min="500" step="100" class="w-full bg-transparent border-b-2 border-gray-300 text-3xl text-gray-800 font-bold focus:outline-none focus:border-thor-cyan transition p-2" oninput="calculatePanels()" />
+                    <input type="number" id="billInput" value="2500" min="500" step="100" class="w-full bg-transparent border-b-2 border-gray-600 text-3xl text-white font-bold focus:outline-none focus:border-thor-cyan transition p-2" oninput="calculatePanels()" />
                   </div>
-                  <input type="range" id="billRange" min="500" max="10000" step="100" value="2500" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-thor-cyan" oninput="document.getElementById('billInput').value=this.value; calculatePanels();" />
+                  <input type="range" id="billRange" min="500" max="10000" step="100" value="2500" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-thor-cyan" oninput="document.getElementById('billInput').value=this.value; calculatePanels();" />
                   <p class="text-sm text-gray-500 mt-2">Desliza para ajustar tu pago a CFE.</p>
                 </div>
             </div>
 
             <div id="calc-lights" class="calc-content hidden animation-fade">
                 <div>
-                  <label class="block text-gray-700 font-bold mb-4 text-lg">¿Cuántas lámparas necesitas?</label>
+                  <label class="block text-gray-300 font-bold mb-4 text-lg">¿Cuántas lámparas necesitas?</label>
                   <div class="flex items-center gap-4 mb-4">
-                    <span class="text-2xl text-gray-800 font-bold">#</span>
-                    <input type="number" id="lampInput" value="10" min="1" step="1" class="w-full bg-transparent border-b-2 border-gray-300 text-3xl text-gray-800 font-bold focus:outline-none focus:border-thor-dark transition p-2" oninput="calculateLights()" />
+                    <span class="text-2xl text-white font-bold">#</span>
+                    <input type="number" id="lampInput" value="10" min="1" step="1" class="w-full bg-transparent border-b-2 border-gray-600 text-3xl text-white font-bold focus:outline-none focus:border-white transition p-2" oninput="calculateLights()" />
                   </div>
-                  <input type="range" id="lampRange" min="1" max="100" step="1" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gray-800" oninput="document.getElementById('lampInput').value=this.value; calculateLights();" />
+                  <input type="range" id="lampRange" min="1" max="100" step="1" value="10" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-white" oninput="document.getElementById('lampInput').value=this.value; calculateLights();" />
                 </div>
                 <div class="mt-8">
-                     <label class="block text-gray-700 font-bold mb-2 text-lg">Potencia actual (Reemplazo):</label>
-                      <select id="wattsInput" onchange="calculateLights()" class="w-full bg-gray-50 text-gray-800 p-3 rounded-xl border border-gray-300 focus:border-thor-dark outline-none">
+                     <label class="block text-gray-300 font-bold mb-2 text-lg">Potencia actual (Reemplazo):</label>
+                      <select id="wattsInput" onchange="calculateLights()" class="w-full bg-gray-800 text-white p-3 rounded-xl border border-gray-600 focus:border-white outline-none">
                           <option value="60">Foco Incandescente (60W)</option>
                           <option value="150" selected>Lámpara Suburbana Vieja (150W)</option>
                           <option value="400">Reflector Halógeno (400W)</option>
@@ -419,13 +419,13 @@
                 </div>
             </div>
 
-            <div class="p-4 bg-gray-50 rounded-xl border border-gray-200 flex items-start gap-4 mt-6">
-              <div class="p-2 bg-thor-dark rounded-full text-white mt-1"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
-              <div><p id="recLabel" class="text-sm text-thor-gold font-bold uppercase tracking-wide">Modelo Recomendado</p><p id="recommendedModel" class="text-xl text-gray-800 font-bold">Gravedad 150L</p></div>
+            <div class="p-4 bg-white/5 rounded-xl border border-white/10 flex items-start gap-4 mt-6">
+              <div class="p-2 bg-gray-700 rounded-full text-white mt-1"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+              <div><p id="recLabel" class="text-sm text-thor-gold font-bold uppercase tracking-wide">Modelo Recomendado</p><p id="recommendedModel" class="text-xl text-white font-bold">Gravedad 150L</p></div>
             </div>
           </div>
 
-          <div class="bg-thor-dark p-8 rounded-2xl text-center relative overflow-hidden h-full flex flex-col justify-center shadow-lg">
+          <div class="bg-gradient-to-br from-white/10 to-transparent p-8 rounded-2xl border border-white/5 text-center relative overflow-hidden h-full flex flex-col justify-center">
             <h3 id="resultTitle" class="text-gray-300 uppercase tracking-widest text-sm mb-6">Tu Ahorro Estimado (Gas)</h3>
             <div class="mb-6"><p id="resultLabel1" class="text-gray-400 text-sm">Ahorro Mensual</p><p id="resultValue1" class="text-4xl font-black text-white">$640 <span class="text-base font-normal">MXN</span></p></div>
             <div class="mb-6"><p id="resultLabel2" class="text-gray-400 text-sm">Ahorro Anual</p><p id="resultValue2" class="text-5xl font-black text-thor-gold">$7,680 <span class="text-2xl font-normal">MXN</span></p></div>
@@ -436,31 +436,30 @@
       </div>
     </section>
 
-    <section class="py-20 relative overflow-hidden bg-thor-dark">
-      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-thor-dark via-transparent to-thor-dark opacity-90"></div>
+    <section class="py-20 relative overflow-hidden bg-gray-300">
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="bg-white/5 backdrop-blur-lg p-10 rounded-3xl border border-white/10 shadow-2xl hover:border-thor-cyan/50 transition duration-500">
+        <div class="bg-white p-10 rounded-3xl border border-gray-200 shadow-xl transition duration-500">
           <div class="text-center mb-10">
-            <h3 class="text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-thor-cyan to-blue-400 mb-2">Comunidad Solar</h3>
-            <p class="text-gray-400">Únete a nuestra red para recibir tips de ahorro y promociones exclusivas.</p>
+            <h3 class="text-3xl font-display font-bold text-thor-dark mb-2">Comunidad Solar</h3>
+            <p class="text-gray-600">Únete a nuestra red para recibir tips de ahorro y promociones exclusivas.</p>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <a href="https://facebook.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-[#1877F2] transition duration-300 border border-white/5 hover:border-transparent">
-              <svg class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
-              <span class="font-bold text-sm text-gray-400 group-hover:text-white">Facebook</span>
+            <a href="https://facebook.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-gray-200 hover:bg-[#1877F2] transition duration-300 border border-gray-200 hover:border-transparent">
+              <svg class="h-8 w-8 text-gray-400 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+              <span class="font-bold text-sm text-gray-600 group-hover:text-white">Facebook</span>
             </a>
-            <a href="https://instagram.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition duration-300 border border-white/5 hover:border-transparent">
-              <svg class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
-              <span class="font-bold text-sm text-gray-400 group-hover:text-white">Instagram</span>
+            <a href="https://instagram.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-gray-200 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition duration-300 border border-gray-200 hover:border-transparent">
+              <svg class="h-8 w-8 text-gray-400 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+              <span class="font-bold text-sm text-gray-600 group-hover:text-white">Instagram</span>
             </a>
-            <a href="https://x.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-black transition duration-300 border border-white/5 hover:border-transparent">
-              <svg class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
-              <span class="font-bold text-sm text-gray-400 group-hover:text-white">X / Twitter</span>
+            <a href="https://x.com/thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-gray-200 hover:bg-black transition duration-300 border border-gray-200 hover:border-transparent">
+              <svg class="h-8 w-8 text-gray-400 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+              <span class="font-bold text-sm text-gray-600 group-hover:text-white">X / Twitter</span>
             </a>
-            <a href="https://tiktok.com/@thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-[#000000] hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition duration-300 border border-white/5 hover:border-thor-cyan">
-              <svg class="h-8 w-8 text-gray-300 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" /></svg>
-              <span class="font-bold text-sm text-gray-400 group-hover:text-white">TikTok</span>
+            <a href="https://tiktok.com/@thorsolar" target="_blank" class="group flex flex-col items-center justify-center p-4 rounded-2xl bg-gray-200 hover:bg-[#000000] hover:shadow-lg transition duration-300 border border-gray-200 hover:border-thor-dark">
+              <svg class="h-8 w-8 text-gray-400 group-hover:text-white mb-2 transition duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" /></svg>
+              <span class="font-bold text-sm text-gray-600 group-hover:text-white">TikTok</span>
             </a>
           </div>
         </div>
@@ -530,12 +529,11 @@
     function setPeople(num) {
       currentPeople = num;
       document.querySelectorAll(".people-btn").forEach((btn) => {
-        btn.classList.remove("bg-thor-gold", "text-white", "active");
-        btn.classList.add("text-gray-500", "bg-gray-50", "border-gray-300");
-        
+        btn.classList.remove("bg-thor-gold", "text-thor-dark", "active");
+        btn.classList.add("text-gray-300", "bg-white/5");
         if (parseInt(btn.dataset.val) === num) {
-          btn.classList.remove("text-gray-500", "bg-gray-50", "border-gray-300");
-          btn.classList.add("bg-thor-gold", "text-white", "active", "border-thor-gold");
+          btn.classList.remove("text-gray-300", "bg-white/5");
+          btn.classList.add("bg-thor-gold", "text-thor-dark", "active");
         }
       });
       calculateHeaters();
