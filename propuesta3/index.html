@@ -106,6 +106,30 @@
       -webkit-appearance: none; 
       margin: 0; 
     }
+
+    /* --- Agrega esto dentro de tu etiqueta <style> --- */
+    
+    /* Animación para el carrusel infinito */
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    .animate-scroll {
+        display: flex;
+        width: fit-content;
+        animation: scroll 30s linear infinite; /* Ajusta 30s para velocidad */
+    }
+    
+    .animate-scroll:hover {
+        animation-play-state: paused; /* Se detiene si pasas el mouse */
+    }
+    
+    /* Efecto de desvanecimiento a los lados del carrusel */
+    .mask-fade {
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
   </style>
 </head>
 
@@ -436,6 +460,68 @@
       </div>
     </section>
 
+    <section class="py-16 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-thor-dark uppercase tracking-wide">
+            Calidad Certificada
+          </h2>
+          <div class="w-16 h-1 bg-thor-gold mx-auto mt-2 rounded-full"></div>
+          <p class="mt-3 text-gray-500">Cumplimos con las normas más estrictas de eficiencia y seguridad.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="flex flex-col items-center gap-2 group cursor-pointer">
+             <img src="https://imgs.search.brave.com/16hguVGRxg-NDxa1jZqKIjDCFtsyECATnGLqRSljt28/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzEwLzIvbm9tLWxv/Z28tcG5nX3NlZWts/b2dvLTEwMDM4Ny5w/bmc" alt="Certificación NOM" class="h-16 object-contain group-hover:scale-110 transition duration-300">
+             <span class="text-xs font-bold text-gray-400 group-hover:text-thor-blue">NOM-003</span>
+          </div>
+
+          <div class="flex flex-col items-center gap-2 group cursor-pointer">
+             <img src="https://imgs.search.brave.com/IXZIUsZ-1tJseeq4gWNx-ovrk6gkceNpZRaRhdkwGpE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zZWVr/bG9nby5jb20vaW1h/Z2VzL0cvZ2FyYW50/aWEtZmlkZS1jZmUt/bG9nby1BRTJDMTU5/NzhBLXNlZWtsb2dv/LmNvbS5wbmc" class="h-16 object-contain group-hover:scale-110 transition duration-300">
+             <span class="text-xs font-bold text-gray-400 group-hover:text-thor-blue">Sello FIDE</span>
+          </div>
+
+          <div class="flex flex-col items-center gap-2 group cursor-pointer">
+             <img src="https://imgs.search.brave.com/NMGerIRAZzVXUegRSksvb3GTL0GmHAh5VS7kQWKa4WM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzM3LzIvaXNvLTkw/MDEtcW1zLWxvZ28t/cG5nX3NlZWtsb2dv/LTM3NzAzMC5wbmc" alt="ISO 9001" class="h-16 object-contain group-hover:scale-110 transition duration-300">
+             <span class="text-xs font-bold text-gray-400 group-hover:text-green-600">ISO 9001</span>
+          </div>
+
+          <div class="flex flex-col items-center gap-2 group cursor-pointer">
+             <img src="https://imgs.search.brave.com/RhdOsmSDcvlc5uCcZwoiQQgXGwFRUS7bZaq4U2pdRHk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjAv/MDQwLzcyMC9zbWFs/bC9jaGFyZ2UtZW5l/cmd5LWxvZ28taWNv/bi10ZW1wbGF0ZS1m/cmVlLXZlY3Rvci5q/cGc" alt="ISO 9001" class="h-16 object-contain group-hover:scale-110 transition duration-300">
+             <span class="text-xs font-bold text-gray-400 group-hover:text-thor-blue">ISO 9001</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-thor-dark overflow-hidden relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center">
+        <p class="text-gray-400 text-sm font-bold uppercase tracking-[0.2em]">Trabajamos con los mejores</p>
+      </div>
+
+      <div class="mask-fade w-full inline-flex flex-nowrap overflow-hidden">
+        <div class="animate-scroll items-center">
+          <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none">
+            <li><img src="https://imgs.search.brave.com/XTkDFvX-dnxXCor1Fjrf69jRGKTOEOCa98sYg56L8rc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi92ZWN0/b3ItZGUtbG9nb3Rp/cG8tZW5lcmclQzMl/QURhLXNvbGFyLXBh/bmVsZXMtc29sYXJl/cy0xODQ4ODAwNjku/anBn" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 1" /></li>
+            <li><img src="https://imgs.search.brave.com/bZWa4Ty7NswHiUhc-ojXkb9psBZoFurEpeHxeCGhMwo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMTAv/MzY3LzcwOS9zbWFs/bC9zb2xhci1lbmVy/Z3ktbG9nby13aXRo/LWEtY29tYmluYXRp/b24tb2Ytc3VuLWFu/ZC1zb2xhci1wYW5l/bHMtYXMtdGhlLWlj/b24tdmVjdG9yLmpw/Zw" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 2" /></li>
+            <li><img src="https://imgs.search.brave.com/367kdFWgURWAAW93i7hgAzuEGJJ44Puvj73cmqL0jcM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pbnNp/Z25pYS1kZS1zdW4t/Y29uLWxvcy1wYW5l/bGVzLXNvbGFyZXMt/MjUzOTIyMzIuanBn" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 3" /></li>
+            <li><img src="https:https://imgs.search.brave.com/367kdFWgURWAAW93i7hgAzuEGJJ44Puvj73cmqL0jcM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pbnNp/Z25pYS1kZS1zdW4t/Y29uLWxvcy1wYW5l/bGVzLXNvbGFyZXMt/MjUzOTIyMzIuanBn" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 4" /></li>
+            <li><img src="https://via.placeholder.com/1" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 5" /></li>
+            <li><img src="https://via.placeholder.co" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 6" /></li>
+          </ul>
+          
+          <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none">
+            <li><img src="https://imgs.search.brave.com/XTkDFvX-dnxXCor1Fjrf69jRGKTOEOCa98sYg56L8rc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi92ZWN0/b3ItZGUtbG9nb3Rp/cG8tZW5lcmclQzMl/QURhLXNvbGFyLXBh/bmVsZXMtc29sYXJl/cy0xODQ4ODAwNjku/anBn" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 1" /></li>
+            <li><img src="https://imgs.search.brave.com/bZWa4Ty7NswHiUhc-ojXkb9psBZoFurEpeHxeCGhMwo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMTAv/MzY3LzcwOS9zbWFs/bC9zb2xhci1lbmVy/Z3ktbG9nby13aXRo/LWEtY29tYmluYXRp/b24tb2Ytc3VuLWFu/ZC1zb2xhci1wYW5l/bHMtYXMtdGhlLWlj/b24tdmVjdG9yLmpw/Zw" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 2" /></li>
+            <li><img src="https://imgs.search.brave.com/367kdFWgURWAAW93i7hgAzuEGJJ44Puvj73cmqL0jcM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pbnNp/Z25pYS1kZS1zdW4t/Y29uLWxvcy1wYW5l/bGVzLXNvbGFyZXMt/MjUzOTIyMzIuanBn" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 3" /></li>
+            <li><img src="https://imgs.search.brave.com/367kdFWgURWAAW93i7hgAzuEGJJ44Puvj73cmqL0jcM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pbnNp/Z25pYS1kZS1zdW4t/Y29uLWxvcy1wYW5l/bGVzLXNvbGFyZXMt/MjUzOTIyMzIuanBn" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 4" /></li>
+            <li><img src="https://via.placeholder.com/120x50/1e3a8a/ffffff?text=Enphase" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 5" /></li>
+            <li><img src="https://via.placeholder.com/120x50/1e3a8a/ffffff?text=Longi" class="h-10 opacity-60 hover:opacity-100 transition duration-300" alt="Marca 6" /></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="py-20 relative overflow-hidden bg-gray-300">
       <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -481,7 +567,7 @@
   </footer>
 
   <script>
-    // --- NAVBAR STICKY ---
+    // navbar 
     const navbar = document.querySelector("nav");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 20) {
@@ -493,7 +579,7 @@
       }
     });
 
-    // --- MENÚ MÓVIL ---
+    // Menu para movil
     const menuButton = document.getElementById("menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
 
@@ -507,7 +593,7 @@
       );
     });
 
-    // --- CALCULADORA MULTIUSOS ---
+    // Calculadora multi
     const formatter = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", minimumFractionDigits: 0 });
     let currentMode = 'heaters';
     let currentPeople = 3;
@@ -603,3 +689,4 @@
   </script>
 </body>
 </html>
+
